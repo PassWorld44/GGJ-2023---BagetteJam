@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fence_cornerRoundStrong.obj-9779370ae24edbe109b9b5d961b2f599.mesh"
+
+[deps]
+
+files=[ "res://.import/fence_cornerRoundStrong.obj-9779370ae24edbe109b9b5d961b2f599.mesh" ]
+
+source_file="res://RES/MODELS/KennyModels/Nature Kit/fence_cornerRoundStrong.obj"
+dest_files=[ "res://.import/fence_cornerRoundStrong.obj-9779370ae24edbe109b9b5d961b2f599.mesh", "res://.import/fence_cornerRoundStrong.obj-9779370ae24edbe109b9b5d961b2f599.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
