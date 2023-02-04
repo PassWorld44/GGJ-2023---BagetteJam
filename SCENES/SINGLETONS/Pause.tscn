@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SCRIPTS/SINGLETONS/Pause.gd" type="Script" id=1]
 [ext_resource path="res://RES/theme/icons/paused.svg" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://RES/SHADERS/aberration.shader" type="Shader" id=4]
 [ext_resource path="res://addons/FocusHelper/FocusCursor.gd" type="Script" id=5]
 [ext_resource path="res://addons/FocusHelper/Icons/hand_outlined.svg" type="Texture" id=6]
+[ext_resource path="res://RES/theme/fonts/Title.tres" type="DynamicFont" id=7]
+[ext_resource path="res://RES/theme/fonts/josefinSans.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -13,6 +15,12 @@ shader_param/levels = 3
 shader_param/spread = 0.019
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
 
 [node name="PauseMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -58,57 +66,63 @@ custom_styles/normal = SubResource( 1 )
 flat = true
 
 [node name="PausePanel" type="VBoxContainer" parent="Holder/VBox"]
-margin_left = 874.0
-margin_top = 484.0
-margin_right = 1014.0
-margin_bottom = 620.0
+margin_left = 736.0
+margin_top = 356.0
+margin_right = 1152.0
+margin_bottom = 748.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="Label" type="Label" parent="Holder/VBox/PausePanel"]
-margin_right = 140.0
-margin_bottom = 16.0
+margin_right = 416.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 3 )
 text = "Paused"
+align = 1
+valign = 1
 
 [node name="ButtonHolder" type="VBoxContainer" parent="Holder/VBox/PausePanel"]
-margin_top = 24.0
-margin_right = 140.0
-margin_bottom = 136.0
+margin_top = 136.0
+margin_right = 416.0
+margin_bottom = 392.0
 
-[node name="Button" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
-margin_right = 140.0
-margin_bottom = 32.0
-focus_neighbour_left = NodePath("../Button2")
-focus_neighbour_top = NodePath("../Button2")
-focus_neighbour_right = NodePath("../Button3")
-focus_neighbour_bottom = NodePath("../Button3")
-focus_next = NodePath("../Button3")
-focus_previous = NodePath("../Button2")
+[node name="Resume" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
+margin_right = 416.0
+margin_bottom = 80.0
+focus_neighbour_left = NodePath("../SaveQuit")
+focus_neighbour_top = NodePath("../SaveQuit")
+focus_neighbour_right = NodePath("../TitleScreen")
+focus_neighbour_bottom = NodePath("../TitleScreen")
+focus_next = NodePath("../TitleScreen")
+focus_previous = NodePath("../SaveQuit")
+custom_fonts/font = ExtResource( 7 )
 text = "Resume"
 
-[node name="Button3" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
-margin_top = 40.0
-margin_right = 140.0
-margin_bottom = 72.0
-focus_neighbour_left = NodePath("../Button")
-focus_neighbour_top = NodePath("../Button")
-focus_neighbour_right = NodePath("../Button2")
-focus_neighbour_bottom = NodePath("../Button2")
-focus_next = NodePath("../Button2")
-focus_previous = NodePath("../Button")
-text = "Go to title screen"
+[node name="TitleScreen" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
+margin_top = 88.0
+margin_right = 416.0
+margin_bottom = 168.0
+focus_neighbour_left = NodePath("../Resume")
+focus_neighbour_top = NodePath("../Resume")
+focus_neighbour_right = NodePath("../SaveQuit")
+focus_neighbour_bottom = NodePath("../SaveQuit")
+focus_next = NodePath("../SaveQuit")
+focus_previous = NodePath("../Resume")
+custom_fonts/font = ExtResource( 7 )
+text = "Title screen"
 
-[node name="Button2" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
-margin_top = 80.0
-margin_right = 140.0
-margin_bottom = 112.0
-focus_neighbour_left = NodePath("../Button3")
-focus_neighbour_top = NodePath("../Button3")
-focus_neighbour_right = NodePath("../Button")
-focus_neighbour_bottom = NodePath("../Button")
-focus_next = NodePath("../Button")
-focus_previous = NodePath("../Button3")
+[node name="SaveQuit" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
+margin_top = 176.0
+margin_right = 416.0
+margin_bottom = 256.0
+focus_neighbour_left = NodePath("../TitleScreen")
+focus_neighbour_top = NodePath("../TitleScreen")
+focus_neighbour_right = NodePath("../Resume")
+focus_neighbour_bottom = NodePath("../Resume")
+focus_next = NodePath("../Resume")
+focus_previous = NodePath("../TitleScreen")
+custom_fonts/font = ExtResource( 7 )
 text = "Save & Quit"
 
 [node name="FocusCursor" type="Sprite" parent="."]
@@ -120,7 +134,7 @@ script = ExtResource( 5 )
 [connection signal="paused" from="." to="Cover" method="set_visible" binds= [ true ]]
 [connection signal="paused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ true ]]
 [connection signal="paused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ true ]]
-[connection signal="paused" from="." to="Holder/VBox/PausePanel/ButtonHolder/Button" method="grab_focus"]
+[connection signal="paused" from="." to="Holder/VBox/PausePanel/ButtonHolder/Resume" method="grab_focus"]
 [connection signal="unpaused" from="." to="Cover" method="set_visible" binds= [ false ]]
 [connection signal="unpaused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ false ]]
 [connection signal="unpaused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ false ]]

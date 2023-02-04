@@ -31,7 +31,7 @@
 [ext_resource path="res://RES/theme/icons/folder.svg" type="Texture" id=29]
 [ext_resource path="res://RES/theme/icons/updown_spinbox.svg" type="Texture" id=30]
 [ext_resource path="res://RES/theme/icons/cross.svg" type="Texture" id=31]
-[ext_resource path="res://RES/theme/fonts/JosefinTitle.tres" type="DynamicFont" id=32]
+[ext_resource path="res://RES/theme/fonts/Title.tres" type="DynamicFont" id=32]
 [ext_resource path="res://RES/theme/fonts/Default.tres" type="DynamicFont" id=34]
 
 [sub_resource type="StyleBoxFlat" id=44]
