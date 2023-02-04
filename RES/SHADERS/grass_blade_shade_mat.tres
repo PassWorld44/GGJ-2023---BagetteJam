@@ -28,5 +28,5 @@ shader_param/color_scale = 0.2
 shader_param/color_grad_height = 0.02
 shader_param/top_color = Color( 0.133333, 1, 0, 1 )
 shader_param/bot_color = Color( 0, 0, 0, 1 )
-shader_param/grass_scale = Vector3( 0.317, 1.089, 1 )
+shader_param/grass_scale = Vector3( 0.159, 0.545, 1 )
 shader_param/sway_noise = SubResource( 4 )
