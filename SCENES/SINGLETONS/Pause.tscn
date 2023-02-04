@@ -5,7 +5,7 @@
 [ext_resource path="res://RES/theme/icons/unpaused.svg" type="Texture" id=3]
 [ext_resource path="res://RES/SHADERS/aberration.shader" type="Shader" id=4]
 [ext_resource path="res://addons/FocusHelper/FocusCursor.gd" type="Script" id=5]
-[ext_resource path="res://addons/FocusHelper/Icons/hand_outlined.svg" type="Texture" id=6]
+[ext_resource path="res://SPRITES/UI/ICONS/focusleaf.svg" type="Texture" id=6]
 [ext_resource path="res://RES/theme/fonts/Title.tres" type="DynamicFont" id=7]
 [ext_resource path="res://RES/theme/fonts/josefinSans.ttf" type="DynamicFontData" id=8]
 

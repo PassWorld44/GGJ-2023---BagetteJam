@@ -20,7 +20,7 @@ var next_position : Vector2 = Vector2.ZERO
 func _enter_tree():
 	verifier = Control.new()
 	add_child(verifier)
-	
+
 
 
 
@@ -40,8 +40,8 @@ func _process(delta):
 		if not get_focus_owner().is_connected("pressed",self,"_focus_pressed"):
 			update_focus()
 	global_position = lerp(global_position,get_side_position(),0.15)
-#	rotation = lerp_angle(rotation,get_angle_to(get_focus_owner().rect_size/2 + get_focus_owner().rect_global_position),0.15)
-	look_at(get_focus_owner().rect_size/2 + get_focus_owner().rect_global_position)
+
+
 # Custom methods
 
 func update_focus():
@@ -72,8 +72,8 @@ func get_focus_owner() -> Control:
 func get_side_position():
 	var overflow = get_focus_owner().rect_global_position.x < texture.get_size().x*2
 	
-	flip_v = overflow
-	return get_focus_owner().rect_global_position + Vector2(get_focus_owner().rect_size.x + 8 if overflow else -8 ,
+	flip_h = overflow
+	return get_focus_owner().rect_global_position + Vector2(get_focus_owner().rect_size.x + texture.get_size().x/2 if overflow else -texture.get_size().x/2 ,
 	get_focus_owner().rect_size.y/2)
 
 func is_valid(node:Control):
