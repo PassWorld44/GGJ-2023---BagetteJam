@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SCENES/LEVELS/TEST/Obstacle.tscn" type="PackedScene" id=1]
 
@@ -7,6 +7,29 @@ size = Vector3( 10, 2, 10 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.172549, 1, 0, 1 )
+
+[sub_resource type="CapsuleMesh" id=5]
+
+[sub_resource type="CapsuleShape" id=6]
+
+[sub_resource type="ProceduralSky" id=3]
+sky_top_color = Color( 0.0901961, 0.247059, 0.545098, 1 )
+sky_horizon_color = Color( 0.137255, 0.180392, 0.407843, 1 )
+ground_bottom_color = Color( 0.027451, 0.184314, 0.282353, 1 )
+ground_horizon_color = Color( 1, 0.0745098, 0.0745098, 1 )
+ground_energy = 3.0
+sun_color = Color( 1, 0.317647, 0.317647, 1 )
+
+[sub_resource type="Environment" id=4]
+background_mode = 2
+background_sky = SubResource( 3 )
+tonemap_mode = 3
+auto_exposure_enabled = true
+glow_enabled = true
+glow_bloom = 0.1
+glow_blend_mode = 1
+glow_bicubic_upscale = true
+glow_high_quality = true
 
 [node name="Spatial" type="Spatial"]
 
@@ -17,3 +40,23 @@ material/0 = SubResource( 2 )
 
 [node name="Spatial" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4 )
+
+[node name="Spatial3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1 )
+
+[node name="MeshInstance" parent="Spatial3" index="0"]
+mesh = SubResource( 5 )
+
+[node name="CollisionShape" parent="Spatial3" index="1"]
+shape = SubResource( 6 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 4.96593, 8.74118 )
+
+[editable path="Spatial3"]
