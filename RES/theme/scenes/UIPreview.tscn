@@ -1,0 +1,535 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RES/theme/icons/dropper.svg" type="Texture" id=1]
+[ext_resource path="res://RES/theme/green.tres" type="Theme" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Control" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 1010.0
+margin_bottom = 586.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Nodes" type="HBoxContainer" parent="Control/ScrollContainer"]
+margin_right = 972.0
+margin_bottom = 1185.0
+size_flags_horizontal = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Control/ScrollContainer/Nodes"]
+margin_right = 482.0
+margin_bottom = 1185.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Button" type="Button" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_right = 482.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button_pressed" type="Button" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 39.0
+margin_right = 482.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+pressed = true
+text = "Button pressed"
+
+[node name="Button_disabled" type="Button" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 78.0
+margin_right = 482.0
+margin_bottom = 109.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+toggle_mode = true
+text = "Button disabled"
+
+[node name="FlatButton" type="Button" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 117.0
+margin_right = 482.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Flat Button"
+flat = true
+
+[node name="CheckBox" type="CheckBox" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 156.0
+margin_right = 482.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Checkbox"
+
+[node name="CheckBox_pressed" type="CheckBox" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 212.0
+margin_right = 482.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Checkbox pressed"
+
+[node name="CheckBox_disabled" type="CheckBox" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 268.0
+margin_right = 482.0
+margin_bottom = 316.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Checkbox disabled"
+
+[node name="CheckBox_pressed_disabled" type="CheckBox" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 324.0
+margin_right = 482.0
+margin_bottom = 372.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+pressed = true
+text = "Checkbox pressed disabled"
+
+[node name="FlatCheckBox" type="CheckBox" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 380.0
+margin_right = 482.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Flat Checkbox"
+flat = true
+
+[node name="CheckButton" type="CheckButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 436.0
+margin_right = 482.0
+margin_bottom = 516.0
+size_flags_horizontal = 3
+text = "CheckButton"
+
+[node name="CheckButton_pressed" type="CheckButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 524.0
+margin_right = 482.0
+margin_bottom = 604.0
+size_flags_horizontal = 3
+pressed = true
+text = "CheckButton"
+
+[node name="CheckButton_disabled" type="CheckButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 612.0
+margin_right = 482.0
+margin_bottom = 692.0
+size_flags_horizontal = 3
+disabled = true
+text = "CheckButton disabled"
+
+[node name="CheckButton_pressed_disabled" type="CheckButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 700.0
+margin_right = 482.0
+margin_bottom = 780.0
+size_flags_horizontal = 3
+disabled = true
+pressed = true
+text = "CheckButton pressed disabled"
+
+[node name="FlatCheckButton" type="CheckButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 788.0
+margin_right = 482.0
+margin_bottom = 868.0
+size_flags_horizontal = 3
+text = "Flat CheckButton"
+flat = true
+
+[node name="MenuButton" type="MenuButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 876.0
+margin_right = 482.0
+margin_bottom = 907.0
+focus_mode = 2
+size_flags_horizontal = 3
+text = "Menu button"
+flat = false
+items = [ "Selectable", null, 0, false, false, 0, 0, null, "", false, "Checkbox", null, 1, false, false, 1, 0, null, "", false, "Checbox checked", null, 1, true, false, 2, 0, null, "", false, "Checkbox disabled", null, 1, false, true, 3, 0, null, "", false, "Checkbox pressed disabled", null, 1, true, true, 4, 0, null, "", false, "Separator", null, 0, false, false, 5, 0, null, "", true, "Radio", null, 2, false, false, 6, 0, null, "", false, "Radio checked", null, 2, false, false, 7, 0, null, "", false, "Radio disabled", null, 2, false, true, 8, 0, null, "", false, "Radio checked disabled", null, 2, false, true, 9, 0, null, "", false ]
+
+[node name="MenuButton2" type="MenuButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 915.0
+margin_right = 482.0
+margin_bottom = 946.0
+focus_mode = 2
+size_flags_horizontal = 3
+text = "Flat Menu Button"
+items = [ "Selectable", null, 0, false, false, 0, 0, null, "", false, "Checkbox", null, 1, false, false, 1, 0, null, "", false, "Checbox checked", null, 1, true, false, 2, 0, null, "", false, "Checkbox disabled", null, 1, false, true, 3, 0, null, "", false, "Checkbox pressed disabled", null, 1, true, true, 4, 0, null, "", false, "Separator", null, 0, false, false, 5, 0, null, "", true, "Radio", null, 2, false, false, 6, 0, null, "", false, "Radio checked", null, 2, false, false, 7, 0, null, "", false, "Radio disabled", null, 2, false, true, 8, 0, null, "", false, "Radio checked disabled", null, 2, false, true, 9, 0, null, "", false ]
+
+[node name="OptionButton" type="OptionButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 954.0
+margin_right = 482.0
+margin_bottom = 990.0
+size_flags_horizontal = 3
+text = "Selectable"
+items = [ "Selectable", null, false, 0, null, "Selectable disabled", null, true, 1, null, "Icon selectable", ExtResource( 1 ), false, 2, null ]
+selected = 0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 998.0
+margin_right = 482.0
+margin_bottom = 1029.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.0627451, 1, 1 )
+text = "Color Picker Button"
+icon_align = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="Dialogs" type="VBoxContainer" parent="Control/ScrollContainer/Nodes/Buttons"]
+margin_top = 1037.0
+margin_right = 482.0
+margin_bottom = 1185.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="ButtonWindowDialog" type="Button" parent="Control/ScrollContainer/Nodes/Buttons/Dialogs"]
+margin_right = 482.0
+margin_bottom = 31.0
+text = "Window dialog"
+
+[node name="ButtonAcceptDialog" type="Button" parent="Control/ScrollContainer/Nodes/Buttons/Dialogs"]
+margin_top = 39.0
+margin_right = 482.0
+margin_bottom = 70.0
+text = "Accept dialog"
+
+[node name="ButtonConfirmationDialog" type="Button" parent="Control/ScrollContainer/Nodes/Buttons/Dialogs"]
+margin_top = 78.0
+margin_right = 482.0
+margin_bottom = 109.0
+text = "Confirmation dialog"
+
+[node name="ButtonFileDialog" type="Button" parent="Control/ScrollContainer/Nodes/Buttons/Dialogs"]
+margin_top = 117.0
+margin_right = 482.0
+margin_bottom = 148.0
+text = "File dialog"
+
+[node name="Things" type="VBoxContainer" parent="Control/ScrollContainer/Nodes"]
+margin_left = 490.0
+margin_right = 972.0
+margin_bottom = 1185.0
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="Control/ScrollContainer/Nodes/Things"]
+margin_right = 482.0
+margin_bottom = 39.0
+text = "LineEdit"
+placeholder_text = "LineEdit"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="LineEditReadOnly" type="LineEdit" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 47.0
+margin_right = 482.0
+margin_bottom = 86.0
+text = "LineEdit read only"
+editable = false
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="TextEdit" type="TextEdit" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 94.0
+margin_right = 482.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 0, 96 )
+size_flags_horizontal = 3
+text = "TextEdit"
+
+[node name="TextEditReadOnly" type="TextEdit" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 198.0
+margin_right = 482.0
+margin_bottom = 294.0
+rect_min_size = Vector2( 0, 96 )
+size_flags_horizontal = 3
+text = "Text Edit
+read only"
+readonly = true
+
+[node name="SpinBox" type="SpinBox" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 302.0
+margin_right = 482.0
+margin_bottom = 341.0
+hint_tooltip = "SpinBox"
+size_flags_horizontal = 3
+
+[node name="SpinBoxReadOnly" type="SpinBox" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 349.0
+margin_right = 482.0
+margin_bottom = 388.0
+hint_tooltip = "Read Only SpinBox"
+size_flags_horizontal = 3
+value = 42.0
+editable = false
+
+[node name="Sliders" type="HBoxContainer" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 396.0
+margin_right = 482.0
+margin_bottom = 610.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ScrollContainer/Nodes/Things/Sliders"]
+margin_right = 64.0
+margin_bottom = 214.0
+size_flags_vertical = 3
+
+[node name="VSlider" type="VSlider" parent="Control/ScrollContainer/Nodes/Things/Sliders/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VScrollBar" type="VScrollBar" parent="Control/ScrollContainer/Nodes/Things/Sliders/HBoxContainer"]
+margin_left = 40.0
+margin_right = 64.0
+margin_bottom = 214.0
+page = 20.0
+custom_step = 32.0
+
+[node name="VSeparator" type="VSeparator" parent="Control/ScrollContainer/Nodes/Things/Sliders"]
+margin_left = 72.0
+margin_right = 80.0
+margin_bottom = 214.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/Nodes/Things/Sliders"]
+margin_left = 88.0
+margin_right = 482.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+custom_constants/separation = 16
+
+[node name="HSlider" type="HSlider" parent="Control/ScrollContainer/Nodes/Things/Sliders/VBoxContainer"]
+margin_right = 394.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 66.0
+
+[node name="HSlider_disabled" type="HSlider" parent="Control/ScrollContainer/Nodes/Things/Sliders/VBoxContainer"]
+margin_top = 48.0
+margin_right = 394.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 33.0
+editable = false
+
+[node name="HScrollBar" type="HScrollBar" parent="Control/ScrollContainer/Nodes/Things/Sliders/VBoxContainer"]
+margin_top = 96.0
+margin_right = 394.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+page = 20.0
+
+[node name="HSeparator" type="HSeparator" parent="Control/ScrollContainer/Nodes/Things/Sliders/VBoxContainer"]
+margin_top = 136.0
+margin_right = 394.0
+margin_bottom = 144.0
+size_flags_vertical = 6
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/ScrollContainer/Nodes/Things/Sliders/VBoxContainer"]
+margin_top = 160.0
+margin_right = 394.0
+margin_bottom = 179.0
+size_flags_vertical = 3
+value = 66.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="Control/ScrollContainer/Nodes/Things/Sliders/VBoxContainer"]
+margin_top = 195.0
+margin_right = 394.0
+margin_bottom = 214.0
+size_flags_vertical = 3
+value = 33.0
+
+[node name="TabContainer" type="TabContainer" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 618.0
+margin_right = 482.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 0, 182 )
+
+[node name="Tab 1" type="Tabs" parent="Control/ScrollContainer/Nodes/Things/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 55.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 1/VBoxContainer"]
+margin_right = 466.0
+margin_bottom = 23.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Label"
+
+[node name="RichTextLabelWave" type="RichTextLabel" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 1/VBoxContainer"]
+margin_top = 31.0
+margin_right = 466.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[wave]RichTextLabel"
+text = "RichTextLabel"
+fit_content_height = true
+
+[node name="RichTextLabelTornado" type="RichTextLabel" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 1/VBoxContainer"]
+margin_top = 63.0
+margin_right = 466.0
+margin_bottom = 87.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[tornado]RichTextLabel"
+text = "RichTextLabel"
+fit_content_height = true
+
+[node name="RichTextLabelShake" type="RichTextLabel" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 1/VBoxContainer"]
+margin_top = 95.0
+margin_right = 466.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[shake]RichTextLabel"
+text = "RichTextLabel"
+fit_content_height = true
+
+[node name="Tab 2" type="Tabs" parent="Control/ScrollContainer/Nodes/Things/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 55.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabelFade" type="RichTextLabel" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 2/VBoxContainer"]
+margin_right = 466.0
+margin_bottom = 55.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[fade]RichTextLabel"
+text = "RichTextLabel"
+fit_content_height = true
+
+[node name="RichTextLabelRainbow" type="RichTextLabel" parent="Control/ScrollContainer/Nodes/Things/TabContainer/Tab 2/VBoxContainer"]
+margin_top = 63.0
+margin_right = 466.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[rainbow]RichTextLabel"
+text = "RichTextLabel"
+fit_content_height = true
+
+[node name="Tab 3" type="Tabs" parent="Control/ScrollContainer/Nodes/Things/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 55.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="ItemList" type="ItemList" parent="Control/ScrollContainer/Nodes/Things"]
+margin_top = 808.0
+margin_right = 482.0
+margin_bottom = 918.0
+items = [ "Item 1", null, false, "Item 2", null, false, "Item disabled", null, true, "Item 4", null, false ]
+auto_height = true
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+anchor_left = 0.35
+anchor_top = 0.4
+anchor_right = 0.65
+anchor_bottom = 0.6
+margin_left = -0.399994
+margin_right = 2.40002
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource( 2 )
+popup_exclusive = true
+window_title = "Window dialog"
+
+[node name="Label" type="Label" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This is a window dialog !"
+align = 1
+valign = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+anchor_left = 0.33
+anchor_top = 0.4
+anchor_right = 0.66
+anchor_bottom = 0.6
+margin_left = 0.0799866
+margin_right = 0.159973
+size_flags_horizontal = 6
+size_flags_vertical = 6
+window_title = "Alerte !"
+dialog_text = "This is an accept dialog !"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+anchor_left = 0.33
+anchor_top = 0.4
+anchor_right = 0.66
+anchor_bottom = 0.6
+margin_left = 0.0799866
+margin_right = 0.159973
+size_flags_horizontal = 6
+size_flags_vertical = 6
+window_title = "Confirmation Dialog"
+dialog_text = "Is this a confirmation dialog ?"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_left = -0.400002
+margin_right = 5.40002
+window_title = "Ouvrir un fichier ou un répertoire"
+dialog_text = "This is a file dialog !"
+mode = 3
+access = 2
+
+[connection signal="pressed" from="Control/ScrollContainer/Nodes/Buttons/Dialogs/ButtonWindowDialog" to="WindowDialog" method="popup"]
+[connection signal="pressed" from="Control/ScrollContainer/Nodes/Buttons/Dialogs/ButtonAcceptDialog" to="AcceptDialog" method="popup"]
+[connection signal="pressed" from="Control/ScrollContainer/Nodes/Buttons/Dialogs/ButtonConfirmationDialog" to="ConfirmationDialog" method="popup"]
+[connection signal="pressed" from="Control/ScrollContainer/Nodes/Buttons/Dialogs/ButtonFileDialog" to="FileDialog" method="popup"]

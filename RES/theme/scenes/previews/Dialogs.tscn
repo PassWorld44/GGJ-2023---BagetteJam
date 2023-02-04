@@ -1,0 +1,130 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RES/theme/fonts/josefinSans.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="Dialogs" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 403.0
+margin_top = 186.0
+margin_right = 620.0
+margin_bottom = 414.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 217.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+custom_fonts/font = SubResource( 1 )
+text = "Dialogs"
+align = 1
+valign = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 217.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonWindowDialog" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+margin_right = 217.0
+margin_bottom = 31.0
+text = "Window dialog"
+
+[node name="ButtonAcceptDialog" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+margin_top = 39.0
+margin_right = 217.0
+margin_bottom = 70.0
+text = "Accept dialog"
+
+[node name="ButtonConfirmationDialog" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+margin_top = 78.0
+margin_right = 217.0
+margin_bottom = 109.0
+text = "Confirmation dialog"
+
+[node name="ButtonFileDialog" type="Button" parent="CenterContainer/VBoxContainer/ButtonContainer"]
+margin_top = 117.0
+margin_right = 217.0
+margin_bottom = 148.0
+text = "File dialog"
+
+[node name="WindowContainer" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WindowDialog" type="WindowDialog" parent="WindowContainer"]
+anchor_left = 0.35
+anchor_top = 0.4
+anchor_right = 0.65
+anchor_bottom = 0.6
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+window_title = "Window dialog"
+
+[node name="Label" type="Label" parent="WindowContainer/WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This is a window dialog !"
+align = 1
+valign = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="WindowContainer"]
+anchor_left = 0.33
+anchor_top = 0.4
+anchor_right = 0.66
+anchor_bottom = 0.6
+size_flags_horizontal = 6
+size_flags_vertical = 6
+window_title = "Alerte !"
+dialog_text = "This is an accept dialog !"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="WindowContainer"]
+anchor_left = 0.33
+anchor_top = 0.4
+anchor_right = 0.66
+anchor_bottom = 0.6
+size_flags_horizontal = 6
+size_flags_vertical = 6
+window_title = "Confirmation Dialog"
+dialog_text = "Is this a confirmation dialog ?"
+
+[node name="FileDialog" type="FileDialog" parent="WindowContainer"]
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_left = -0.400002
+margin_right = -0.599976
+window_title = "Ouvrir un fichier ou un répertoire"
+dialog_text = "This is a file dialog !"
+mode = 3
+access = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonContainer/ButtonWindowDialog" to="WindowContainer/WindowDialog" method="popup"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonContainer/ButtonAcceptDialog" to="WindowContainer/AcceptDialog" method="popup"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonContainer/ButtonConfirmationDialog" to="WindowContainer/ConfirmationDialog" method="popup"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonContainer/ButtonFileDialog" to="WindowContainer/FileDialog" method="popup"]

@@ -103,6 +103,7 @@ static func from_array(array: Array, num: int = 1, unique: bool = false) -> Arra
 # Generates a random integer between `from` (inclusive) and `to` (exclusive).
 # If `from` equals `to`, returns it.
 static func randi_range(from: int, to: int, rng=null) -> int:
+	randomize()
 	if from == to:
 		return from
 	elif from > to:

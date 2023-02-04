@@ -1,0 +1,198 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://RES/theme/icons/dropper.svg" type="Texture" id=1]
+[ext_resource path="res://RES/theme/fonts/josefinSans.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Buttons" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 196.0
+margin_top = 27.0
+margin_right = 828.0
+margin_bottom = 573.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 632.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+custom_fonts/font = SubResource( 1 )
+text = "Buttons"
+align = 1
+valign = 2
+
+[node name="VBoxContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 632.0
+margin_bottom = 546.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+margin_right = 632.0
+margin_bottom = 466.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons"]
+margin_right = 276.0
+margin_bottom = 466.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_right = 276.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Button"
+
+[node name="Button_pressed" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 67.0
+margin_right = 276.0
+margin_bottom = 127.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+pressed = true
+text = "Button pressed"
+
+[node name="Button_disabled" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 135.0
+margin_right = 276.0
+margin_bottom = 195.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+toggle_mode = true
+text = "Button disabled"
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 203.0
+margin_right = 276.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Checkbox"
+
+[node name="CheckBox_pressed" type="CheckBox" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 270.0
+margin_right = 276.0
+margin_bottom = 330.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Checkbox pressed"
+
+[node name="CheckBox_disabled" type="CheckBox" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 338.0
+margin_right = 276.0
+margin_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+text = "Checkbox disabled"
+
+[node name="CheckBox_pressed_disabled" type="CheckBox" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer"]
+margin_top = 406.0
+margin_right = 276.0
+margin_bottom = 466.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+disabled = true
+pressed = true
+text = "Checkbox pressed disabled"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons"]
+margin_left = 284.0
+margin_right = 632.0
+margin_bottom = 466.0
+
+[node name="MenuButton" type="MenuButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_right = 348.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+text = "Menu button"
+items = [ "Selectable", null, 0, false, false, 0, 0, null, "", false, "Checkbox", null, 1, false, false, 1, 0, null, "", false, "Checbox checked", null, 1, true, false, 2, 0, null, "", false, "Checkbox disabled", null, 1, false, true, 3, 0, null, "", false, "Checkbox pressed disabled", null, 1, true, true, 4, 0, null, "", false, "Separator", null, 0, false, false, 5, 0, null, "", true, "Radio", null, 2, false, false, 6, 0, null, "", false, "Radio checked", null, 2, false, false, 7, 0, null, "", false, "Radio disabled", null, 2, false, true, 8, 0, null, "", false, "Radio checked disabled", null, 2, false, true, 9, 0, null, "", false ]
+
+[node name="OptionButton" type="OptionButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_top = 39.0
+margin_right = 348.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+text = "Selectable"
+items = [ "Selectable", null, false, 0, null, "Selectable disabled", null, true, 1, null, "Icon selectable", ExtResource( 1 ), false, 2, null ]
+selected = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_top = 83.0
+margin_right = 348.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2/HBoxContainer"]
+margin_right = 158.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Color picker button"
+valign = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2/HBoxContainer"]
+margin_left = 166.0
+margin_right = 348.0
+margin_bottom = 31.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.0627451, 1, 1 )
+text = "Color Picker Button"
+icon_align = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="CheckButton" type="CheckButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_top = 122.0
+margin_right = 348.0
+margin_bottom = 202.0
+size_flags_horizontal = 3
+text = "CheckButton"
+
+[node name="CheckButton_pressed" type="CheckButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_top = 210.0
+margin_right = 348.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+pressed = true
+text = "CheckButton"
+
+[node name="CheckButton_disabled" type="CheckButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_top = 298.0
+margin_right = 348.0
+margin_bottom = 378.0
+size_flags_horizontal = 3
+disabled = true
+text = "CheckButton"
+
+[node name="CheckButton_pressed_disabled" type="CheckButton" parent="CenterContainer/VBoxContainer/VBoxContainer/Buttons/VBoxContainer2"]
+margin_top = 386.0
+margin_right = 348.0
+margin_bottom = 466.0
+size_flags_horizontal = 3
+disabled = true
+pressed = true
+text = "CheckButton"

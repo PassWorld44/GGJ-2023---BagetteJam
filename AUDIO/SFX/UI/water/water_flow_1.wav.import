@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/water_flow_1.wav-c1213d34764b38a25dcb53ba2dbf45c2.sample"
+
+[deps]
+
+source_file="res://AUDIO/SFX/UI/water/water_flow_1.wav"
+dest_files=[ "res://.import/water_flow_1.wav-c1213d34764b38a25dcb53ba2dbf45c2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

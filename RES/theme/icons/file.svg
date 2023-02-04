@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="32"
+   viewBox="0 0 16 16"
+   width="32"
+   fill="#ffffff"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="file.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g
+     id="g909"
+     transform="matrix(0.78517588,0,0,0.78517588,-1.4221124,-1.7176773)">
+    <path
+       d="M 13.568473,4.1576355 H 7.2945813 c -0.8626601,0 -1.5606306,0.7058128 -1.5606306,1.5684729 l -0.00784,12.5477836 c 0,0.86266 0.6979704,1.568473 1.5606305,1.568473 h 9.4186798 c 0.86266,0 1.568473,-0.705813 1.568473,-1.568473 V 8.8630542 Z M 7.2945813,18.273892 V 5.7261084 h 5.4896547 v 3.9211822 h 3.921183 v 8.6266014 z"
+       id="path4"
+       style="stroke-width:0.784236" />
+    <circle
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path856"
+       cx="9.0589876"
+       cy="15.307863"
+       r="0.97142243" />
+    <circle
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path856-0"
+       cx="14.876085"
+       cy="15.28327"
+       r="0.97142243" />
+    <rect
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="rect992"
+       width="5.3779602"
+       height="0.64369017"
+       x="9.207572"
+       y="16.673229"
+       rx="0.24993725"
+       ry="0.38889611" />
+  </g>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="16.916667"
+     inkscape:cx="6.7980294"
+     inkscape:cy="13.862069"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+</svg>
