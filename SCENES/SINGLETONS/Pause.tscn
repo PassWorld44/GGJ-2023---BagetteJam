@@ -91,10 +91,10 @@ margin_right = 140.0
 margin_bottom = 112.0
 text = "Save & Quit"
 
-[connection signal="paused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ true ]]
-[connection signal="paused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ true ]]
 [connection signal="paused" from="." to="Cover" method="set_visible" binds= [ true ]]
-[connection signal="unpaused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ false ]]
-[connection signal="unpaused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ false ]]
+[connection signal="paused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ true ]]
+[connection signal="paused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ true ]]
 [connection signal="unpaused" from="." to="Cover" method="set_visible" binds= [ false ]]
+[connection signal="unpaused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ false ]]
+[connection signal="unpaused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ false ]]
 [connection signal="pressed" from="Holder/VBox/Pauser" to="." method="toggle_pause"]
