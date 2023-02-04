@@ -1,6 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SCRIPTS/Player.gd" type="Script" id=1]
+[ext_resource path="res://RES/MODELS/Tronc.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="CapsuleShape" id=4]
 height = 0.002
@@ -11,8 +12,6 @@ albedo_color = Color( 0.627451, 0.337255, 0, 1 )
 [sub_resource type="ParticlesMaterial" id=5]
 gravity = Vector3( 0, 0, 0 )
 scale = 0.5
-
-[sub_resource type="SphereMesh" id=6]
 
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
@@ -33,5 +32,5 @@ amount = 100
 local_coords = false
 process_material = SubResource( 5 )
 draw_passes = 2
-draw_pass_1 = SubResource( 6 )
+draw_pass_1 = ExtResource( 2 )
 draw_pass_2 = null
