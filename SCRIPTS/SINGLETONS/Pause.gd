@@ -18,11 +18,15 @@ func pause():
 	emit_signal("paused")
 	print("has been paused")
 	$FocusCursor.set_process(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 
 func unpause():
 	emit_signal("unpaused")
 	print("HAS BEEN UNPAUSED")
 	$FocusCursor.set_process(false)
+	if get_tree().current_scene is Spatial:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 
 func toggle_pause():

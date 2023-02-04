@@ -29,7 +29,7 @@ fill_to = Vector2( 0, 0.747356 )
 [sub_resource type="ShaderMaterial" id=30]
 shader = ExtResource( 14 )
 shader_param/color = Color( 0.623529, 0.623529, 0.623529, 1 )
-shader_param/force = 1.621
+shader_param/force = 1.8
 
 [sub_resource type="OpenSimplexNoise" id=27]
 
@@ -182,7 +182,6 @@ glow_high_quality = true
 adjustment_enabled = true
 adjustment_brightness = 0.9
 adjustment_contrast = 1.2
-adjustment_saturation = 0.9
 adjustment_color_correction = SubResource( 25 )
 
 [node name="Node" type="Node"]
@@ -202,7 +201,7 @@ layer = -100
 follow_viewport_enable = true
 follow_viewport_scale = 0.6
 
-[node name="ColorRect2" type="ColorRect" parent="FOND/4"]
+[node name="white" type="ColorRect" parent="FOND/4"]
 material = SubResource( 30 )
 anchor_right = 1.0
 anchor_bottom = 1.0

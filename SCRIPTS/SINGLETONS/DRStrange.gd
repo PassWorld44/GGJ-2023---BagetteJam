@@ -15,6 +15,7 @@ var password = "osef1234"
 
 func _ready():
 	load_values()
+	
 
 #Sauvegarde et chargement d'anciennes données
 func load_values():

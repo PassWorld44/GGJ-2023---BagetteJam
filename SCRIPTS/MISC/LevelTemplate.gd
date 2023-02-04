@@ -2,8 +2,7 @@ extends Spatial
 
 export(int) var next_level
 
-func _ready():
-	pass
+
 
 func _on_water_reached():
 	go_to_next_level()

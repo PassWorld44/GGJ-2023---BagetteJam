@@ -22,11 +22,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337092, 1.98684, 0 )
 [node name="RootsSpawn" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.754, -4 )
 
-[node name="CollisionShape" type="CollisionShape" parent="RootsSpawn"]
+[node name="Col" type="CollisionShape" parent="RootsSpawn"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.754428, 0 )
 shape = SubResource( 4 )
 
-[node name="Particles" type="Particles" parent="RootsSpawn/CollisionShape"]
+[node name="Particles" type="Particles" parent="RootsSpawn/Col"]
 material_override = SubResource( 7 )
 amount = 100
 local_coords = false
@@ -34,3 +34,6 @@ process_material = SubResource( 5 )
 draw_passes = 2
 draw_pass_1 = ExtResource( 2 )
 draw_pass_2 = null
+
+[node name="RayCast" type="RayCast" parent="RootsSpawn/Col/Particles"]
+cast_to = Vector3( 0, 0, -8 )
