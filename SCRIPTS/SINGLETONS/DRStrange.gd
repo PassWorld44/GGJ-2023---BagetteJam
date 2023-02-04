@@ -3,9 +3,12 @@ extends Node
 signal loaded()
 signal saved()
 
+
+
 #Sauvegarde & Variables à garder dedans
 
-var highscore = "" setget set_highscore, get_highscore
+var highscore = 0 setget set_highscore, get_highscore
+var last_level : int
 
 const default_save = "user://sauvegarde.data"
 var password = "osef1234"
