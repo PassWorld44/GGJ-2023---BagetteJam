@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/fence_strong.obj-9b122e6177fee5e2cc764e5eb9ab29b4.mesh"
+
+[deps]
+
+files=[ "res://.import/fence_strong.obj-9b122e6177fee5e2cc764e5eb9ab29b4.mesh" ]
+
+source_file="res://RES/MODELS/KennyModels/Nature Kit/fence_strong.obj"
+dest_files=[ "res://.import/fence_strong.obj-9b122e6177fee5e2cc764e5eb9ab29b4.mesh", "res://.import/fence_strong.obj-9b122e6177fee5e2cc764e5eb9ab29b4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

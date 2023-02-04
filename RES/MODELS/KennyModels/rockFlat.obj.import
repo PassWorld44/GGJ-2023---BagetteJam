@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rockFlat.obj-3abaf46d170cab77695d8ea53de674cc.mesh"
+
+[deps]
+
+files=[ "res://.import/rockFlat.obj-3abaf46d170cab77695d8ea53de674cc.mesh" ]
+
+source_file="res://RES/MODELS/KennyModels/rockFlat.obj"
+dest_files=[ "res://.import/rockFlat.obj-3abaf46d170cab77695d8ea53de674cc.mesh", "res://.import/rockFlat.obj-3abaf46d170cab77695d8ea53de674cc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

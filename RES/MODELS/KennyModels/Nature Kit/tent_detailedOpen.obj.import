@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tent_detailedOpen.obj-5660eb59abdcd8c521bd71603c0e7302.mesh"
+
+[deps]
+
+files=[ "res://.import/tent_detailedOpen.obj-5660eb59abdcd8c521bd71603c0e7302.mesh" ]
+
+source_file="res://RES/MODELS/KennyModels/Nature Kit/tent_detailedOpen.obj"
+dest_files=[ "res://.import/tent_detailedOpen.obj-5660eb59abdcd8c521bd71603c0e7302.mesh", "res://.import/tent_detailedOpen.obj-5660eb59abdcd8c521bd71603c0e7302.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

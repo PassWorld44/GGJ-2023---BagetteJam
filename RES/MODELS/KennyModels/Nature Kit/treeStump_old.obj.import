@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/treeStump_old.obj-3f92ba7e4042b4d0bd3f3b1df8d183aa.mesh"
+
+[deps]
+
+files=[ "res://.import/treeStump_old.obj-3f92ba7e4042b4d0bd3f3b1df8d183aa.mesh" ]
+
+source_file="res://RES/MODELS/KennyModels/Nature Kit/treeStump_old.obj"
+dest_files=[ "res://.import/treeStump_old.obj-3f92ba7e4042b4d0bd3f3b1df8d183aa.mesh", "res://.import/treeStump_old.obj-3f92ba7e4042b4d0bd3f3b1df8d183aa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cliffGrey_stepsCornerInner.obj-16019bd6954f242a21aaecb8a2ea0dff.mesh"
+
+[deps]
+
+files=[ "res://.import/cliffGrey_stepsCornerInner.obj-16019bd6954f242a21aaecb8a2ea0dff.mesh" ]
+
+source_file="res://RES/MODELS/KennyModels/Nature Kit/cliffGrey_stepsCornerInner.obj"
+dest_files=[ "res://.import/cliffGrey_stepsCornerInner.obj-16019bd6954f242a21aaecb8a2ea0dff.mesh", "res://.import/cliffGrey_stepsCornerInner.obj-16019bd6954f242a21aaecb8a2ea0dff.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
