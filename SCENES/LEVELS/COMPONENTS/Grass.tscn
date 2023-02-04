@@ -21,6 +21,7 @@ use_in_baked_light = true
 multimesh = SubResource( 10 )
 
 [node name="grass_source_mesh" type="MeshInstance" parent="."]
+visible = false
 use_in_baked_light = true
 mesh = ExtResource( 2 )
 skeleton = NodePath("../../..")
