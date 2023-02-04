@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SCRIPTS/SINGLETONS/Pause.gd" type="Script" id=1]
 [ext_resource path="res://RES/theme/icons/paused.svg" type="Texture" id=2]
 [ext_resource path="res://RES/theme/icons/unpaused.svg" type="Texture" id=3]
 [ext_resource path="res://RES/SHADERS/aberration.shader" type="Shader" id=4]
+[ext_resource path="res://addons/FocusHelper/FocusCursor.gd" type="Script" id=5]
+[ext_resource path="res://addons/FocusHelper/Icons/hand_outlined.svg" type="Texture" id=6]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -39,7 +41,7 @@ margin_right = 1904.0
 margin_bottom = 1064.0
 mouse_filter = 2
 
-[node name="Pauser" type="CheckBox" parent="Holder/VBox"]
+[node name="Pauser" type="CheckBox" parent="Holder/VBox" groups=["unfocusable"]]
 margin_left = 1840.0
 margin_right = 1888.0
 margin_bottom = 48.0
@@ -77,23 +79,48 @@ margin_bottom = 136.0
 [node name="Button" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
 margin_right = 140.0
 margin_bottom = 32.0
+focus_neighbour_left = NodePath("../Button2")
+focus_neighbour_top = NodePath("../Button2")
+focus_neighbour_right = NodePath("../Button3")
+focus_neighbour_bottom = NodePath("../Button3")
+focus_next = NodePath("../Button3")
+focus_previous = NodePath("../Button2")
 text = "Resume"
 
 [node name="Button3" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
 margin_top = 40.0
 margin_right = 140.0
 margin_bottom = 72.0
+focus_neighbour_left = NodePath("../Button")
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_right = NodePath("../Button2")
+focus_neighbour_bottom = NodePath("../Button2")
+focus_next = NodePath("../Button2")
+focus_previous = NodePath("../Button")
 text = "Go to title screen"
 
 [node name="Button2" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
 margin_top = 80.0
 margin_right = 140.0
 margin_bottom = 112.0
+focus_neighbour_left = NodePath("../Button3")
+focus_neighbour_top = NodePath("../Button3")
+focus_neighbour_right = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../Button")
+focus_next = NodePath("../Button")
+focus_previous = NodePath("../Button3")
 text = "Save & Quit"
+
+[node name="FocusCursor" type="Sprite" parent="."]
+position = Vector2( 14, -7 )
+texture = ExtResource( 6 )
+offset = Vector2( -14, 7 )
+script = ExtResource( 5 )
 
 [connection signal="paused" from="." to="Cover" method="set_visible" binds= [ true ]]
 [connection signal="paused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ true ]]
 [connection signal="paused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ true ]]
+[connection signal="paused" from="." to="Holder/VBox/PausePanel/ButtonHolder/Button" method="grab_focus"]
 [connection signal="unpaused" from="." to="Cover" method="set_visible" binds= [ false ]]
 [connection signal="unpaused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ false ]]
 [connection signal="unpaused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ false ]]

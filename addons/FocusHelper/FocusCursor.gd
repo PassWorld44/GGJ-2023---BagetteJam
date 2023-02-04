@@ -32,7 +32,7 @@ func _process(delta):
 	var offset_x = base_offset_x-abs((sin(time * freq) * amplitude))
 	offset.x = lerp(offset.x,offset_x,0.5)
 	
-	if not is_instance_valid(get_focus_owner()):
+	if not is_valid(get_focus_owner()):
 		hide()
 		return
 	show()
@@ -73,6 +73,8 @@ func get_side_position():
 	var overflow = get_focus_owner().rect_global_position.x < texture.get_size().x*2
 	
 	flip_v = overflow
-#	flip_h = overflow
 	return get_focus_owner().rect_global_position + Vector2(get_focus_owner().rect_size.x + 8 if overflow else -8 ,
 	get_focus_owner().rect_size.y/2)
+
+func is_valid(node:Control):
+	return is_instance_valid(node) && not node.is_in_group("unfocusable")
