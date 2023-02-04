@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Pierre.obj-9296c43809cef12f4ef37c1973df96df.mesh"
+
+[deps]
+
+files=[ "res://.import/Pierre.obj-9296c43809cef12f4ef37c1973df96df.mesh" ]
+
+source_file="res://RES/MODELS/Pierre.obj"
+dest_files=[ "res://.import/Pierre.obj-9296c43809cef12f4ef37c1973df96df.mesh", "res://.import/Pierre.obj-9296c43809cef12f4ef37c1973df96df.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
