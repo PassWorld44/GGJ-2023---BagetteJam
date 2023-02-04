@@ -12,11 +12,11 @@ onready var cover = $Cover
 
 
 func _ready():
-#	while true:
-#		yield(get_tree().create_timer(3),"timeout")
-#		fade_in()
-#		yield(get_tree().create_timer(3),"timeout")
-#		fade_out()
+	while true:
+		yield(get_tree().create_timer(3),"timeout")
+		fade_in()
+		yield(get_tree().create_timer(3),"timeout")
+		fade_out()
 	connect("scene_changing",Strange,"save_variables")
 	connect("scene_changing",$Cover/Quote,"set_text",[RandUtils.pick(quotelist)])
 	connect("scene_changed",slide,"play")
