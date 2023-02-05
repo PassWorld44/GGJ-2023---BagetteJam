@@ -4,7 +4,7 @@ extends Spatial
 const collision_scene = preload("res://SCENES/ENTITIES/PLAYER/Player_Collision.tscn")
 
 
-var look_rot = Vector3.ZERO
+var look_rot = Vector3(0,0,0)
 var sensitivity = 0.01
 
 func _ready():
@@ -19,6 +19,7 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		look_rot.y -= event.relative.x
+		
 
 
 func add_branch():
