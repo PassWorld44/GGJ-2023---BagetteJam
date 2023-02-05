@@ -77,20 +77,12 @@ data = SubResource( 2 )
 [node name="Victory" type="StaticBody" parent="." index="19" groups=["collision_victoire"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61259, -26.0271 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Victory" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38916, -4.76529, 11.6221 )
+[node name="CollisionShape2" type="CollisionShape" parent="Victory" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38916, -4.76529, -50.474 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="Victory" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38916, -4.76529, -49.8474 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape3" type="CollisionShape" parent="Victory" index="2"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.108, -4.76529, -21.2352 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape4" type="CollisionShape" parent="Victory" index="3"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.2054, -4.76529, -21.2352 )
+[node name="CollisionShape3" type="CollisionShape" parent="Victory" index="1"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.6641, -4.76529, -21.2352 )
 shape = SubResource( 1 )
 
 [node name="Spatial" type="Spatial" parent="." index="20"]
