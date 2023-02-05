@@ -14,6 +14,9 @@ transform = Transform( 3.98988, 0.283493, 0.0225503, -0.284388, 3.97731, 0.31637
 [node name="Player" parent="." index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3565, 0, 0 )
 
+[node name="StaticBody" parent="." index="8"]
+visible = false
+
 [node name="flower" parent="." index="9" instance=ExtResource( 4 )]
 transform = Transform( 2.05418, 0, -2.1864, 0, 3, 0, 2.1864, 0, 2.05418, -13.4957, 0, -1.46111 )
 

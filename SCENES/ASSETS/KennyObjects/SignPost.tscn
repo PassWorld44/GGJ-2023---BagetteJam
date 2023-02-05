@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SCENES/ASSETS/baseAsset.tscn" type="PackedScene" id=1]
+[ext_resource path="res://RES/MODELS/KennyModels/signpostSingle.obj" type="ArrayMesh" id=2]
+
+[node name="Spatial" instance=ExtResource( 1 )]
+transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0 )
+
+[node name="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 0.083, 0, 0, 0, 0.224, 0, 0, 0, 0.02, 0, 0.205, 0 )
+
+[node name="MeshInstance" parent="." index="1"]
+mesh = ExtResource( 2 )
