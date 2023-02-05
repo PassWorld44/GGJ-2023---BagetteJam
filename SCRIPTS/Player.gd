@@ -67,12 +67,13 @@ func add_branch():
 
 
 func add_collision():
-	var new_col = collision_scene.instance()
-	CollisionManager.add_child(new_col)
-	new_col.global_translation = $RootsSpawn/Col/Particles.global_translation
-	if last_collision != null:
-		new_col.set_last_collision(last_collision)
-	last_collision = new_col
+	if canMove:
+		var new_col = collision_scene.instance()
+		CollisionManager.add_child(new_col)
+		new_col.global_translation = $RootsSpawn/Col/Particles.global_translation
+		if last_collision != null:
+			new_col.set_last_collision(last_collision)
+		last_collision = new_col
 	get_tree().create_timer(0.25,false).connect("timeout",self,"add_collision")
 	print("COLLISION ADDED")
 

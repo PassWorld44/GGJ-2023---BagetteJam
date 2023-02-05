@@ -64,7 +64,6 @@ valign = 1
 
 [node name="slide" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-bus = "SFX"
 script = ExtResource( 4 )
 samples = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ) ]
 random_strategy = 1
