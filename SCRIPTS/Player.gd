@@ -39,6 +39,7 @@ func _physics_process(delta):
 		if canMove && raycast.get_collider().is_in_group("collision_victoire"):
 			canMove = false
 			Transition.change_scene_to(LevelManager.get_level($"..".next_level))
+			$"..".next_level = -1
 #			velocity.y = range_lerp(raycast.global_translation.distance_to(raycast.get_collider().global_translation),0,8,5,0)
 #	else:
 #		velocity.y = ground_level.y - global_translation.y
