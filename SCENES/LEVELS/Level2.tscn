@@ -28,7 +28,7 @@ next_level = 3
 transform = Transform( 3.98988, 0.283493, 0.0225503, -0.284388, 3.97731, 0.316374, 0, -0.317177, 3.98741, -18, 0, -17 )
 
 [node name="Wind" parent="." index="1"]
-volume_db = -52.034
+bus = "WINDS"
 
 [node name="pianoaire" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 6 )

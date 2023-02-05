@@ -25,6 +25,9 @@ propagation = 0.7
 
 [node name="LevelTemplate" instance=ExtResource( 1 )]
 
+[node name="Wind" parent="." index="0"]
+bus = "WINDS"
+
 [node name="green landscape" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 11 )
 autoplay = true
