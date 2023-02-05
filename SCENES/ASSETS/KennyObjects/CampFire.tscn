@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape" id=1]
 
-[node name="Spatial" type="StaticBody" groups=["collision_obstacles"]]
+[node name="Spatial2" type="StaticBody" groups=["collision_obstacles"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 2.135, 0, 0, 0, 0.61, 0, 0, 0, 2.444, 0, 0.25, 0 )

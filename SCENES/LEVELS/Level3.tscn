@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SCENES/LEVELS/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/ASSETS/tree.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://SCENES/ASSETS/KennyObjects/TreeStump.tscn" type="PackedScene" id=9]
 [ext_resource path="res://SCENES/ASSETS/KennyObjects/Axe.tscn" type="PackedScene" id=10]
 [ext_resource path="res://AUDIO/MUSIC/green landscape.mp3" type="AudioStream" id=11]
+[ext_resource path="res://SCENES/ASSETS/Muret.tscn" type="PackedScene" id=12]
 
 [node name="LevelTemplate" instance=ExtResource( 1 )]
 
@@ -18,6 +19,75 @@
 stream = ExtResource( 11 )
 autoplay = true
 bus = "MUSIC"
+
+[node name="Barriers" parent="." index="6"]
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, -6, 0 )
+}
+
+[node name="Spatial" type="Spatial" parent="Barriers" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22114, 0, 44.5356 )
+
+[node name="Spatial" parent="Barriers/Spatial" index="0" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1, 0, -14.3 )
+
+[node name="Spatial14" parent="Barriers/Spatial" index="1" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1, 0, -76.2 )
+
+[node name="Spatial15" parent="Barriers/Spatial" index="2" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4, 0, -76.2 )
+
+[node name="Spatial16" parent="Barriers/Spatial" index="3" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -76.2 )
+
+[node name="Spatial18" parent="Barriers/Spatial" index="4" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7506, 0, -76.2 )
+
+[node name="Spatial19" parent="Barriers/Spatial" index="5" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.0601, 0, -76.2 )
+
+[node name="Spatial20" parent="Barriers/Spatial" index="6" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.0601, 0, -76.2 )
+
+[node name="Spatial2" parent="Barriers/Spatial" index="7" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0, -14.3 )
+
+[node name="Spatial3" parent="Barriers/Spatial" index="8" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.400001, 0, -14.3 )
+
+[node name="Spatial4" parent="Barriers/Spatial" index="9" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, -14.3 )
+
+[node name="Spatial5" parent="Barriers/Spatial" index="10" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1, 0, -14.3 )
+
+[node name="Spatial6" parent="Barriers/Spatial" index="11" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.4, 0, -26.5 )
+
+[node name="Spatial7" parent="Barriers/Spatial" index="12" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.4, 0, -39 )
+
+[node name="Spatial8" parent="Barriers/Spatial" index="13" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.4, 0, -50.9 )
+
+[node name="Spatial9" parent="Barriers/Spatial" index="14" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.4, 0, -62.8863 )
+
+[node name="Spatial10" parent="Barriers/Spatial" index="15" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.4, 0, -75.5916 )
+
+[node name="Spatial17" parent="Barriers/Spatial" index="16" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.4, 0, -75.5916 )
+
+[node name="Spatial11" parent="Barriers/Spatial" index="17" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.3, 0, -51.4 )
+
+[node name="Spatial12" parent="Barriers/Spatial" index="18" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.3, 0, -64.1 )
+
+[node name="Spatial13" parent="Barriers/Spatial" index="19" instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.3, 0, -76.7 )
 
 [node name="tree" parent="." index="9" instance=ExtResource( 2 )]
 transform = Transform( 3.95436, -0.602559, 0, 0.602559, 3.95436, 0, 0, 0, 4, -16, 0, -15 )
