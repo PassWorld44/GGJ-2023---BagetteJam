@@ -8,6 +8,7 @@ var last_collision = null
 var look_rot = Vector3(0,0,0)
 var sensitivity = 0.01
 var motion_y = 0
+var canMove = false
 
 var velocity = Vector3.ZERO
 
@@ -17,6 +18,7 @@ onready var ground_level = global_translation
 onready var roots = $RootsSpawn
 
 func _ready():
+	canMove = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_collision()
 	roots.connect("body_entered",self,"_on_collision")
@@ -24,23 +26,30 @@ func _ready():
 func _physics_process(delta):
 	rotation_degrees.y = look_rot.y * sensitivity
 	
-	velocity.z = -5
+	if canMove:
+		velocity.z = -5
 	
 	
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
-		if raycast.get_collider().is_in_group("collision_joueur"):
-			velocity.y = range_lerp(raycast.global_translation.distance_to(raycast.get_collider().global_translation),0,8,5,0)
-	else:
-		velocity.y = ground_level.y - global_translation.y
+		if raycast.get_collider().is_in_group("collision_joueur") && canMove:
+			canMove = false
+			Transition.change_scene_to(LevelManager.get_level(2))
+#			velocity.y = range_lerp(raycast.global_translation.distance_to(raycast.get_collider().global_translation),0,8,5,0)
+#	else:
+#		velocity.y = ground_level.y - global_translation.y
 	
 
 	
 	translate(velocity * delta)
 	
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion && canMove:
 		look_rot.y -= event.relative.x
+		
+	if canMove == false && event is InputEventKey:
+		if event.scancode == KEY_SPACE:
+			canMove = true
 		
 
 
