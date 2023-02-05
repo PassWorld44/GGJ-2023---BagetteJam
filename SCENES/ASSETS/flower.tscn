@@ -7,6 +7,99 @@
 [node name="flower" instance=ExtResource( 1 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
 
+[node name="sphere" parent="." index="0"]
+use_in_baked_light = true
+
+[node name="sphere2" parent="." index="1"]
+use_in_baked_light = true
+
+[node name="sphere3" parent="." index="2"]
+use_in_baked_light = true
+
+[node name="sphere4" parent="." index="3"]
+use_in_baked_light = true
+
+[node name="sphere5" parent="." index="4"]
+use_in_baked_light = true
+
+[node name="sphere6" parent="." index="5"]
+use_in_baked_light = true
+
+[node name="sphere7" parent="." index="6"]
+use_in_baked_light = true
+
+[node name="sphere8" parent="." index="7"]
+use_in_baked_light = true
+
+[node name="sphere9" parent="." index="8"]
+use_in_baked_light = true
+
+[node name="sphere10" parent="." index="9"]
+use_in_baked_light = true
+
+[node name="sphere11" parent="." index="10"]
+use_in_baked_light = true
+
+[node name="plant_large" parent="." index="11"]
+use_in_baked_light = true
+
+[node name="sphere12" parent="." index="12"]
+use_in_baked_light = true
+
+[node name="sphere13" parent="." index="13"]
+use_in_baked_light = true
+
+[node name="sphere14" parent="." index="14"]
+use_in_baked_light = true
+
+[node name="sphere15" parent="." index="15"]
+use_in_baked_light = true
+
+[node name="sphere16" parent="." index="16"]
+use_in_baked_light = true
+
+[node name="cylinder" parent="." index="17"]
+use_in_baked_light = true
+
+[node name="sphere17" parent="." index="18"]
+use_in_baked_light = true
+
+[node name="sphere18" parent="." index="19"]
+use_in_baked_light = true
+
+[node name="sphere19" parent="." index="20"]
+use_in_baked_light = true
+
+[node name="sphere20" parent="." index="21"]
+use_in_baked_light = true
+
+[node name="sphere21" parent="." index="22"]
+use_in_baked_light = true
+
+[node name="sphere22" parent="." index="23"]
+use_in_baked_light = true
+
+[node name="sphere23" parent="." index="24"]
+use_in_baked_light = true
+
+[node name="sphere24" parent="." index="25"]
+use_in_baked_light = true
+
+[node name="sphere25" parent="." index="26"]
+use_in_baked_light = true
+
+[node name="sphere26" parent="." index="27"]
+use_in_baked_light = true
+
+[node name="sphere27" parent="." index="28"]
+use_in_baked_light = true
+
+[node name="sphere28" parent="." index="29"]
+use_in_baked_light = true
+
+[node name="sphere29" parent="." index="30"]
+use_in_baked_light = true
+
 [node name="StaticBody" type="StaticBody" parent="." index="31"]
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Drop 6_4.wav-5092d400c8e8e6fb72f9bbd3dc7841d4.sample"
+
+[deps]
+
+source_file="res://AUDIO/SFX/UI/drops/Drop 6_4.wav"
+dest_files=[ "res://.import/Drop 6_4.wav-5092d400c8e8e6fb72f9bbd3dc7841d4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=1

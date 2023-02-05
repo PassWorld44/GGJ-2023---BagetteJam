@@ -9,6 +9,126 @@
 [node name="tree" instance=ExtResource( 1 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0 )
 
+[node name="trunk_skew" parent="." index="0"]
+use_in_baked_light = true
+
+[node name="trunk_split" parent="." index="1"]
+use_in_baked_light = true
+
+[node name="leafs_square" parent="." index="2"]
+use_in_baked_light = true
+
+[node name="leafs_square2" parent="." index="3"]
+use_in_baked_light = true
+
+[node name="leafs_round" parent="." index="4"]
+use_in_baked_light = true
+
+[node name="leafs_round2" parent="." index="5"]
+use_in_baked_light = true
+
+[node name="leafs_round3" parent="." index="6"]
+use_in_baked_light = true
+
+[node name="leafs_round4" parent="." index="7"]
+use_in_baked_light = true
+
+[node name="leafs_cone" parent="." index="8"]
+use_in_baked_light = true
+
+[node name="leafs_cone2" parent="." index="9"]
+use_in_baked_light = true
+
+[node name="leafs_pineA" parent="." index="10"]
+use_in_baked_light = true
+
+[node name="leafs_round5" parent="." index="11"]
+use_in_baked_light = true
+
+[node name="leafs_round6" parent="." index="12"]
+use_in_baked_light = true
+
+[node name="leafs_pineA2" parent="." index="13"]
+use_in_baked_light = true
+
+[node name="leafs_round7" parent="." index="14"]
+use_in_baked_light = true
+
+[node name="leafs_round8" parent="." index="15"]
+use_in_baked_light = true
+
+[node name="leafs_round9" parent="." index="16"]
+use_in_baked_light = true
+
+[node name="leafs_round10" parent="." index="17"]
+use_in_baked_light = true
+
+[node name="leafs_pineA3" parent="." index="18"]
+use_in_baked_light = true
+
+[node name="leafs_cone3" parent="." index="19"]
+use_in_baked_light = true
+
+[node name="leafs_cone4" parent="." index="20"]
+use_in_baked_light = true
+
+[node name="leafs_cone5" parent="." index="21"]
+use_in_baked_light = true
+
+[node name="leafs_cone6" parent="." index="22"]
+use_in_baked_light = true
+
+[node name="leafs_cone7" parent="." index="23"]
+use_in_baked_light = true
+
+[node name="trunk_skewLarge" parent="." index="24"]
+use_in_baked_light = true
+
+[node name="tree_branchLong" parent="." index="25"]
+use_in_baked_light = true
+
+[node name="leafs_pineA4" parent="." index="26"]
+use_in_baked_light = true
+
+[node name="leafs_round11" parent="." index="27"]
+use_in_baked_light = true
+
+[node name="leafs_round12" parent="." index="28"]
+use_in_baked_light = true
+
+[node name="tree_branchLongBend" parent="." index="29"]
+use_in_baked_light = true
+
+[node name="trunk_detailedA" parent="." index="30"]
+use_in_baked_light = true
+
+[node name="trunk_baseDetailed" parent="." index="31"]
+use_in_baked_light = true
+
+[node name="trunk_detailedB" parent="." index="32"]
+use_in_baked_light = true
+
+[node name="trunk" parent="." index="33"]
+use_in_baked_light = true
+
+[node name="trunk_skewLarge2" parent="." index="34"]
+use_in_baked_light = true
+
+[node name="tree_branchLongSplit" parent="." index="35"]
+use_in_baked_light = true
+
+[node name="tree_branchShortBend" parent="." index="36"]
+use_in_baked_light = true
+
+[node name="trunk2" parent="." index="37"]
+use_in_baked_light = true
+
+[node name="tree_branchLong2" parent="." index="38"]
+use_in_baked_light = true
+
+[node name="tree_branchLong3" parent="." index="39"]
+use_in_baked_light = true
+
 [node name="StaticBody" type="StaticBody" parent="." index="40"]
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]

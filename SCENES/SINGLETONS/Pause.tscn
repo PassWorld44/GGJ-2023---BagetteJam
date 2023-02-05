@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://SCRIPTS/SINGLETONS/Pause.gd" type="Script" id=1]
 [ext_resource path="res://RES/theme/icons/paused.svg" type="Texture" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://SPRITES/UI/ICONS/focusleaf.svg" type="Texture" id=6]
 [ext_resource path="res://RES/theme/fonts/Title.tres" type="DynamicFont" id=7]
 [ext_resource path="res://RES/theme/fonts/josefinSans.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://AUDIO/SFX/UI/drops/Drop 3_2.wav" type="AudioStream" id=9]
+[ext_resource path="res://addons/randomAudioStreamPlayer/random_audio_stream_player.gd" type="Script" id=10]
+[ext_resource path="res://AUDIO/SFX/UI/drops/Drop 3_3.wav" type="AudioStream" id=11]
+[ext_resource path="res://AUDIO/SFX/UI/drops/Drop 6_4.wav" type="AudioStream" id=12]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 4 )
@@ -153,13 +157,24 @@ text = "Save & Quit"
 texture = ExtResource( 6 )
 script = ExtResource( 5 )
 
+[node name="pause" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+script = ExtResource( 10 )
+samples = [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ) ]
+random_strategy = 1
+random_volume_range = 0
+random_pitch_range = 0.2
+
 [connection signal="paused" from="." to="Cover" method="show"]
 [connection signal="paused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ true ]]
 [connection signal="paused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ true ]]
 [connection signal="paused" from="." to="Holder/VBox/PausePanel/ButtonHolder/Resume" method="grab_focus"]
 [connection signal="paused" from="." to="FocusCursor" method="show"]
+[connection signal="paused" from="." to="pause" method="play"]
 [connection signal="unpaused" from="." to="Cover" method="hide"]
 [connection signal="unpaused" from="." to="Holder/VBox/Pauser" method="set_pressed" binds= [ false ]]
 [connection signal="unpaused" from="." to="Holder/VBox/PausePanel" method="set_visible" binds= [ false ]]
 [connection signal="unpaused" from="." to="FocusCursor" method="hide"]
 [connection signal="pressed" from="Holder/VBox/Pauser" to="." method="toggle_pause"]
+[connection signal="pressed" from="Holder/VBox/PausePanel/ButtonHolder/Resume" to="." method="unpause"]
+[connection signal="pressed" from="Holder/VBox/PausePanel/ButtonHolder/SaveQuit" to="." method="quit"]

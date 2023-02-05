@@ -11,9 +11,6 @@
 [node name="tree" parent="." index="0" instance=ExtResource( 2 )]
 transform = Transform( 3.98988, 0.283493, 0.0225503, -0.284388, 3.97731, 0.316374, 0, -0.317177, 3.98741, -18, 0, -17 )
 
-[node name="Player" parent="." index="7"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.992, -0.969323, -14.807 )
-
 [node name="flower" parent="." index="9" instance=ExtResource( 4 )]
 transform = Transform( 2.05418, 0, -2.1864, 0, 3, 0, 2.1864, 0, 2.05418, -13.4957, 0, -1.46111 )
 
@@ -205,3 +202,6 @@ transform = Transform( 2.53514, 0.866374, 1.34998, 0, 2.52479, -1.62032, -1.6040
 
 [node name="plant35" parent="." index="72" instance=ExtResource( 5 )]
 transform = Transform( 2.52062, -0.862167, 1.37954, 0, 2.54403, 1.58994, -1.6268, -1.33588, 2.13752, 14.7347, 0, 18.8154 )
+
+[node name="Player" parent="." index="73"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.992, 0.030677, -14.807 )

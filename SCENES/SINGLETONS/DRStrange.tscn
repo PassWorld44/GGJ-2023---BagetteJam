@@ -12,5 +12,6 @@ layer = 128
 follow_viewport_enable = true
 
 [node name="FocusCursor" type="Sprite" parent="128"]
+visible = false
 texture = ExtResource( 3 )
 script = ExtResource( 2 )

@@ -26,12 +26,15 @@ func _physics_process(delta):
 	
 	velocity.z = -5
 	
+	
+	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		if raycast.get_collider().is_in_group("collision_joueur"):
-			velocity.y = lerp(velocity.y,range_lerp(raycast.global_translation.distance_to(raycast.get_collider().global_translation),0,8,10,0),0.1)
+			velocity.y = range_lerp(raycast.global_translation.distance_to(raycast.get_collider().global_translation),0,8,5,0)
 	else:
 		velocity.y = ground_level.y - global_translation.y
 	
+
 	
 	translate(velocity * delta)
 	
