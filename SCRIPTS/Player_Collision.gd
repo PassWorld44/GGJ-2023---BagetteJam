@@ -12,7 +12,7 @@ func set_last_collision(last_collision:StaticBody):
 		var pos_to_last = last_collision.global_translation
 		look_at(pos_to_last,Vector3.UP)
 		set_length(global_translation.distance_to(pos_to_last)+ 0.75)
-
+		
 
 func set_length(new_length:int):
 	col.shape.height = new_length 
