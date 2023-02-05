@@ -388,17 +388,14 @@ environment = SubResource( 17 )
 [node name="Wind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 autoplay = true
-bus = "AMBIENCE"
 
 [node name="Birds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 autoplay = true
-bus = "AMBIENCE"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
 autoplay = true
-bus = "MUSIC"
 
 [node name="SETTINGS" parent="." instance=ExtResource( 19 )]
 
