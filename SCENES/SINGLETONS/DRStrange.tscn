@@ -4,14 +4,12 @@
 [ext_resource path="res://addons/FocusHelper/FocusCursor.gd" type="Script" id=2]
 [ext_resource path="res://SPRITES/UI/ICONS/focusleaf.svg" type="Texture" id=3]
 
-[node name="DrStrange" type="Node"]
+[node name="DrStrange" type="CanvasLayer"]
+layer = 4
+follow_viewport_enable = true
 script = ExtResource( 1 )
 
-[node name="128" type="CanvasLayer" parent="."]
-layer = 128
-follow_viewport_enable = true
-
-[node name="FocusCursor" type="Sprite" parent="128"]
+[node name="FocusCursor" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 3 )
 script = ExtResource( 2 )
