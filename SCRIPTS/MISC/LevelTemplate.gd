@@ -7,6 +7,3 @@ func _on_water_reached():
 
 func go_to_next_level():
 	Transition.change_scene_to(LevelManager.get_level(next_level))
-	
-func gameOver():
-	Transition.restart()

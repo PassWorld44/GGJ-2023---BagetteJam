@@ -32,9 +32,9 @@ func _physics_process(delta):
 	
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
-		if raycast.get_collider().is_in_group("collision_joueur") && canMove:
+		if ( raycast.get_collider().is_in_group("collision_joueur") || raycast.get_collider().is_in_group("collision_obstacles") ) && canMove:
 			canMove = false
-			Transition.change_scene_to(LevelManager.get_level(2))
+			Transition.change_scene_to(LevelManager.get_level(1))
 #			velocity.y = range_lerp(raycast.global_translation.distance_to(raycast.get_collider().global_translation),0,8,5,0)
 #	else:
 #		velocity.y = ground_level.y - global_translation.y
