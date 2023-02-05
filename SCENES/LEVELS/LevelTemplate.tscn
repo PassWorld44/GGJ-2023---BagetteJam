@@ -4,8 +4,9 @@
 [ext_resource path="res://SCENES/ENTITIES/PLAYER/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCENES/LEVELS/COMPONENTS/WorldEnvironment.tres" type="Environment" id=3]
 [ext_resource path="res://SCRIPTS/MISC/LevelTemplate.gd" type="Script" id=4]
-[ext_resource path="res://AUDIO/AMBIENCE/WindSoft.ogg" type="AudioStream" id=5]
-[ext_resource path="res://AUDIO/AMBIENCE/WaveSoft.ogg" type="AudioStream" id=6]
+[ext_resource path="res://AUDIO/AMBIANCE/WindSoft.ogg" type="AudioStream" id=5]
+[ext_resource path="res://AUDIO/AMBIANCE/WaveSoft.ogg" type="AudioStream" id=6]
+
 
 [sub_resource type="GDScript" id=15]
 script/source = "extends AudioStreamPlayer
