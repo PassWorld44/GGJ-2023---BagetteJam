@@ -31,3 +31,9 @@ func unpause():
 
 func toggle_pause():
 	unpause() if get_tree().paused else pause()
+
+
+func quit():
+	Strange.save_variables()
+	yield(get_tree(),"idle_frame")
+	get_tree().quit()

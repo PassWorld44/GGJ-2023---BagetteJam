@@ -208,3 +208,6 @@ transform = Transform( 2.53514, 0.866374, 1.34998, 0, 2.52479, -1.62032, -1.6040
 
 [node name="plant35" parent="." index="72" instance=ExtResource( 5 )]
 transform = Transform( 2.52062, -0.862167, 1.37954, 0, 2.54403, 1.58994, -1.6268, -1.33588, 2.13752, 14.7347, 0, 18.8154 )
+
+[node name="Player" parent="." index="73"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.992, 0.030677, -14.807 )

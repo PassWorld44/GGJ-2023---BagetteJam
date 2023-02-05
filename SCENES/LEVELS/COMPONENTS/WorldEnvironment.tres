@@ -1,0 +1,30 @@
+[gd_resource type="Environment" load_steps=4 format=2]
+
+[ext_resource path="res://RES/ENVS/gradients/Day.tres" type="Gradient" id=1]
+
+[sub_resource type="GradientTexture" id=11]
+gradient = ExtResource( 1 )
+
+[sub_resource type="ProceduralSky" id=12]
+sky_top_color = Color( 0.54902, 0.839216, 1, 1 )
+ground_bottom_color = Color( 0.0666667, 0.117647, 0.266667, 1 )
+ground_horizon_color = Color( 1, 1, 1, 1 )
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 12 )
+fog_color = Color( 1, 1, 1, 1 )
+fog_sun_color = Color( 1, 0.784314, 0.517647, 1 )
+tonemap_mode = 3
+tonemap_exposure = 0.75
+auto_exposure_enabled = true
+dof_blur_far_enabled = true
+dof_blur_far_distance = 64.0
+dof_blur_far_transition = 32.0
+glow_enabled = true
+glow_bloom = 0.05
+glow_blend_mode = 1
+glow_bicubic_upscale = true
+glow_high_quality = true
+adjustment_enabled = true
+adjustment_color_correction = SubResource( 11 )
