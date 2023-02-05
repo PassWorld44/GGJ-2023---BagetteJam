@@ -470,7 +470,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=32]
-extents = Vector3( 0.0645744, 0.498751, 0.0669188 )
+extents = Vector3( 0.0584154, 0.422059, 0.0482846 )
 
 [node name="flower" type="StaticBody" groups=["collision_obstacles"]]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
@@ -630,5 +630,5 @@ use_in_baked_light = true
 mesh = SubResource( 31 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.505013, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.397687, 0 )
 shape = SubResource( 32 )

@@ -7,6 +7,7 @@
 [ext_resource path="res://SCENES/ASSETS/plant1.tscn" type="PackedScene" id=5]
 
 [node name="Level1" instance=ExtResource( 1 )]
+next_level = 2
 
 [node name="flower" parent="." index="0" instance=ExtResource( 4 )]
 transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, -7.4727, 0, -23.3829 )
