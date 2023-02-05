@@ -37,3 +37,10 @@ func quit():
 	Strange.save_variables()
 	yield(get_tree(),"idle_frame")
 	get_tree().quit()
+
+
+func show_settings():
+	Settings.show()
+
+func go_to_titlescreen():
+	Transition.change_scene("res://SCENES/UI/MENU/Menu.tscn")

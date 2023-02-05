@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/rooteldorad.svg" type="Texture" id=1]
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/eau.svg" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://SPRITES/UI/ICONS/waterdrop.svg" type="Texture" id=4]
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/layers/tronc.png" type="Texture" id=5]
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/layers/menu_layer_2.png" type="Texture" id=6]
-[ext_resource path="res://RES/theme/green.tres" type="Theme" id=7]
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/layers/menu_layer_0.png" type="Texture" id=8]
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/layers/menu_layer_1.png" type="Texture" id=9]
 [ext_resource path="res://SPRITES/UI/TITLESCREEN/layers/racine.png" type="Texture" id=10]
@@ -18,7 +17,6 @@
 [ext_resource path="res://AUDIO/AMBIANCE/WindSoftLeaves.ogg" type="AudioStream" id=16]
 [ext_resource path="res://AUDIO/AMBIANCE/Birds.ogg" type="AudioStream" id=17]
 [ext_resource path="res://AUDIO/MUSIC/Menu_Loop.mp3" type="AudioStream" id=18]
-[ext_resource path="res://SCENES/SINGLETONS/Settings.tscn" type="PackedScene" id=19]
 
 [sub_resource type="GDScript" id=33]
 script/source = "extends Node
@@ -28,8 +26,6 @@ script/source = "extends Node
 func play():
 	Transition.change_scene_to(LevelManager.get_level(1))
 
-func settings():
-	Settings.show()
 "
 
 [sub_resource type="Gradient" id=14]
@@ -324,62 +320,16 @@ lifetime = 3.0
 process_material = SubResource( 4 )
 texture = ExtResource( 4 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Margin/VBox"]
-margin_left = 780.0
-margin_top = 469.0
-margin_right = 1011.0
-margin_bottom = 689.0
-size_flags_horizontal = 6
-size_flags_vertical = 6
-theme = ExtResource( 7 )
-
-[node name="Play" type="Button" parent="Margin/VBox/VBoxContainer"]
-margin_left = 53.0
-margin_right = 177.0
-margin_bottom = 68.0
-focus_neighbour_left = NodePath("../Quit")
-focus_neighbour_top = NodePath("../Quit")
-focus_neighbour_right = NodePath("../Settings")
-focus_neighbour_bottom = NodePath("../Settings")
-focus_next = NodePath("../Settings")
-focus_previous = NodePath("../Quit")
+[node name="Play" type="Button" parent="Margin/VBox"]
+margin_left = 834.0
+margin_top = 545.0
+margin_right = 958.0
+margin_bottom = 613.0
 size_flags_horizontal = 4
+size_flags_vertical = 6
 theme_type_variation = "LargeButton"
 custom_fonts/font = ExtResource( 13 )
 text = "Play"
-flat = true
-
-[node name="Settings" type="Button" parent="Margin/VBox/VBoxContainer"]
-margin_top = 76.0
-margin_right = 231.0
-margin_bottom = 144.0
-focus_neighbour_left = NodePath("../Play")
-focus_neighbour_top = NodePath("../Play")
-focus_neighbour_right = NodePath("../Quit")
-focus_neighbour_bottom = NodePath("../Quit")
-focus_next = NodePath("../Quit")
-focus_previous = NodePath("../Play")
-size_flags_horizontal = 4
-theme_type_variation = "LargeButton"
-custom_fonts/font = ExtResource( 13 )
-text = "Settings"
-flat = true
-
-[node name="Quit" type="Button" parent="Margin/VBox/VBoxContainer"]
-margin_left = 50.0
-margin_top = 152.0
-margin_right = 181.0
-margin_bottom = 220.0
-focus_neighbour_left = NodePath("../Settings")
-focus_neighbour_top = NodePath("../Settings")
-focus_neighbour_right = NodePath("../Play")
-focus_neighbour_bottom = NodePath("../Play")
-focus_next = NodePath("../Play")
-focus_previous = NodePath("../Settings")
-size_flags_horizontal = 4
-theme_type_variation = "LargeButton"
-custom_fonts/font = ExtResource( 13 )
-text = "Quit"
 flat = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -400,9 +350,5 @@ stream = ExtResource( 18 )
 autoplay = true
 bus = "MUSIC"
 
-[node name="SETTINGS" parent="." instance=ExtResource( 19 )]
-
-[connection signal="pressed" from="Margin/VBox/VBoxContainer/Play" to="." method="play"]
-[connection signal="ready" from="Margin/VBox/VBoxContainer/Play" to="Margin/VBox/VBoxContainer/Play" method="grab_focus"]
-[connection signal="pressed" from="Margin/VBox/VBoxContainer/Settings" to="." method="settings"]
-[connection signal="hidden" from="SETTINGS" to="Margin/VBox/VBoxContainer/Play" method="grab_focus"]
+[connection signal="pressed" from="Margin/VBox/Play" to="." method="play"]
+[connection signal="ready" from="Margin/VBox/Play" to="Margin/VBox/Play" method="grab_focus"]
