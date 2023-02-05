@@ -93,11 +93,10 @@ custom_styles/normal = SubResource( 1 )
 flat = true
 
 [node name="PausePanel" type="VBoxContainer" parent="Holder/VBox"]
-visible = false
 margin_left = 736.0
-margin_top = 356.0
+margin_top = 312.0
 margin_right = 1152.0
-margin_bottom = 748.0
+margin_bottom = 792.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -113,7 +112,7 @@ valign = 1
 [node name="ButtonHolder" type="VBoxContainer" parent="Holder/VBox/PausePanel"]
 margin_top = 136.0
 margin_right = 416.0
-margin_bottom = 392.0
+margin_bottom = 480.0
 
 [node name="Resume" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
 margin_right = 416.0
@@ -127,10 +126,23 @@ focus_previous = NodePath("../SaveQuit")
 custom_fonts/font = ExtResource( 7 )
 text = "Resume"
 
-[node name="TitleScreen" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
+[node name="Settings" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
 margin_top = 88.0
 margin_right = 416.0
 margin_bottom = 168.0
+focus_neighbour_left = NodePath("../SaveQuit")
+focus_neighbour_top = NodePath("../SaveQuit")
+focus_neighbour_right = NodePath("../TitleScreen")
+focus_neighbour_bottom = NodePath("../TitleScreen")
+focus_next = NodePath("../TitleScreen")
+focus_previous = NodePath("../SaveQuit")
+custom_fonts/font = ExtResource( 7 )
+text = "Settings"
+
+[node name="TitleScreen" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
+margin_top = 176.0
+margin_right = 416.0
+margin_bottom = 256.0
 focus_neighbour_left = NodePath("../Resume")
 focus_neighbour_top = NodePath("../Resume")
 focus_neighbour_right = NodePath("../SaveQuit")
@@ -141,9 +153,9 @@ custom_fonts/font = ExtResource( 7 )
 text = "Title screen"
 
 [node name="SaveQuit" type="Button" parent="Holder/VBox/PausePanel/ButtonHolder"]
-margin_top = 176.0
+margin_top = 264.0
 margin_right = 416.0
-margin_bottom = 256.0
+margin_bottom = 344.0
 focus_neighbour_left = NodePath("../TitleScreen")
 focus_neighbour_top = NodePath("../TitleScreen")
 focus_neighbour_right = NodePath("../Resume")
@@ -177,4 +189,6 @@ random_pitch_range = 0.2
 [connection signal="unpaused" from="." to="FocusCursor" method="hide"]
 [connection signal="pressed" from="Holder/VBox/Pauser" to="." method="toggle_pause"]
 [connection signal="pressed" from="Holder/VBox/PausePanel/ButtonHolder/Resume" to="." method="unpause"]
+[connection signal="pressed" from="Holder/VBox/PausePanel/ButtonHolder/Settings" to="." method="show_settings"]
+[connection signal="pressed" from="Holder/VBox/PausePanel/ButtonHolder/TitleScreen" to="." method="go_to_titlescreen"]
 [connection signal="pressed" from="Holder/VBox/PausePanel/ButtonHolder/SaveQuit" to="." method="quit"]
