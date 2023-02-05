@@ -37,7 +37,6 @@ Transition="*res://SCENES/SINGLETONS/Transition.tscn"
 Pause="*res://SCENES/SINGLETONS/Pause.tscn"
 LevelManager="*res://SCENES/SINGLETONS/LevelManager.tscn"
 CollisionManager="*res://SCENES/SINGLETONS/CollisionManager.tscn"
-Settings="*res://SCENES/SINGLETONS/Settings.tscn"
 
 [display]
 
