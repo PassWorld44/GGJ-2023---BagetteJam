@@ -262,6 +262,7 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="Grass" parent="Ground" instance=ExtResource( 1 )]
+visible = false
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.79559, 0.605836, 0, -0.605836, 0.79559, 0, 23.546, 0 )
