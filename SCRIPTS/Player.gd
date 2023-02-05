@@ -34,7 +34,7 @@ func _physics_process(delta):
 	if raycast.is_colliding():
 		if ( raycast.get_collider().is_in_group("collision_joueur") || raycast.get_collider().is_in_group("collision_obstacles") ) && canMove:
 			canMove = false
-			Transition.change_scene_to(LevelManager.get_level($"..".next_level - 1))
+			Transition.restart()
 			
 		if canMove && raycast.get_collider().is_in_group("collision_victoire"):
 			canMove = false

@@ -2,7 +2,7 @@ extends Node
 
 #const level_folder = "res://SCENES/LEVELS/"
 
-export(Array,PackedScene) var levels 
+export(Array,PackedScene) var levels = []
 
 const menu = preload("res://SCENES/UI/MENU/Menu.tscn")
 

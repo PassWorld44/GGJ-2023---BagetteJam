@@ -21,14 +21,11 @@ propagation = 0.7
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 35.9569, 1, 1 )
 
-[node name="LevelTemplate2" instance=ExtResource( 1 )]
+[node name="Level2" instance=ExtResource( 1 )]
 next_level = 3
 
 [node name="tree" parent="." index="0" instance=ExtResource( 2 )]
 transform = Transform( 3.98988, 0.283493, 0.0225503, -0.284388, 3.97731, 0.316374, 0, -0.317177, 3.98741, -18, 0, -17 )
-
-[node name="Wind" parent="." index="1"]
-bus = "Master"
 
 [node name="pianoaire" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 6 )
