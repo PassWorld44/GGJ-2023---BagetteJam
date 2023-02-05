@@ -45,4 +45,3 @@ current = true
 stream = ExtResource( 3 )
 volume_db = -10.0
 autoplay = true
-bus = "SFX"

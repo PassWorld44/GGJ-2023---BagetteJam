@@ -8,6 +8,7 @@ signal saved()
 #Sauvegarde & Variables à garder dedans
 
 var highscore = 0 setget set_highscore, get_highscore
+var bus_volumes : Dictionary = {0:0,1:0,2:0,3:0} 
 var last_level : int
 
 const default_save = "user://sauvegarde.data"
@@ -25,10 +26,10 @@ func load_values():
 		if err != OK:
 			return
 		else:
-			var player_data = file.get_var()
-			for i in player_data.keys():
+			var data = file.get_var()
+			for i in data.keys():
 				if get(i) != null:
-					set(i,player_data[i])
+					set(i,data[i])
 	file.close()
 	yield(get_tree(),"idle_frame")
 	emit_signal("loaded")
@@ -45,6 +46,7 @@ func save_variables():
 func get_data():
 	return {
 		"highscore":highscore,
+		"bus_volumes":bus_volumes,
 	}
 
 # MEILLEUR SCORE ------------------------------|
@@ -55,6 +57,16 @@ func set_highscore(value):
 func get_highscore():
 	return highscore
 
+# VOLUME ------------------------------|
+
+func set_bus_volume(bus:int,volume:int):
+	bus_volumes[bus] = volume
+	save_variables()
+#	print(bus_volumes)
+
+func get_bus_volume(bus:int):
+	
+	return bus_volumes[bus]
 
 # SAUVEGARDER ET QUITTER ----------------------|
 func _notification(event):
