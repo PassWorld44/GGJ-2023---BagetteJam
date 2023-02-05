@@ -25,7 +25,7 @@ script/source = "extends Node
 
 
 func play():
-	Transition.change_scene_to(LevelManager.get_level(1))
+	Transition.change_scene_to(LevelManager.get_level(2))
 "
 
 [sub_resource type="Gradient" id=14]
