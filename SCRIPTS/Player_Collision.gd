@@ -5,8 +5,7 @@ var length = 2 setget set_length
 
 onready var col = $CollisionShape
 onready var mesh = $MeshInstance
-onready var rayback = $rayback
-onready var rayfront = $rayfront
+
 
 func set_last_collision(last_collision:StaticBody):
 	if is_instance_valid(last_collision):
@@ -21,4 +20,3 @@ func set_length(new_length:int):
 	mesh.mesh.height = new_length
 	mesh.translation.z = -new_length/2.0
 	$ball2.translation.z = -new_length
-	rayback.translation.z = -new_length
