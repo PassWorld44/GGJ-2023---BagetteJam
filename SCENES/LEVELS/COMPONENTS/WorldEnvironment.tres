@@ -7,7 +7,7 @@ gradient = ExtResource( 1 )
 
 [sub_resource type="ProceduralSky" id=12]
 sky_top_color = Color( 0.54902, 0.839216, 1, 1 )
-ground_bottom_color = Color( 0.807843, 0.909804, 1, 1 )
+ground_bottom_color = Color( 1, 1, 1, 1 )
 ground_horizon_color = Color( 0.839216, 0.917647, 0.980392, 1 )
 
 [resource]

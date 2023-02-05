@@ -30,7 +30,6 @@ transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, -7.47
 
 [node name="Wind" parent="." index="1"]
 stream = ExtResource( 8 )
-bus = "Master"
 
 [node name="ground lonelyness" type="AudioStreamPlayer" parent="." index="3"]
 stream = ExtResource( 6 )
