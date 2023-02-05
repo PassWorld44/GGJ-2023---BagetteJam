@@ -246,7 +246,11 @@ data = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61259, -26.0271 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Victory" index="0"]
-transform = Transform( 0.999495, 0, 0.0317771, 0, 1, 0, -0.0317771, 0, 0.999495, -6.38916, -4.76529, -49.6672 )
+transform = Transform( 0.999495, 0, 0.0317771, 0, 1, 0, -0.0317771, 0, 0.999495, -6.38916, -4.76529, -50.2514 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Victory" index="1"]
+transform = Transform( -0.0520571, 0, 0.998644, 0, 1, 0, -0.998644, 0, -0.0520571, 30.3128, -4.76529, -14.7162 )
 shape = SubResource( 1 )
 
 [node name="Spatial" type="Spatial" parent="." index="77"]
