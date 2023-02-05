@@ -4,13 +4,14 @@ extends Node
 
 export(Array,PackedScene) var levels 
 
+const menu = preload("res://SCENES/UI/MENU/Menu.tscn")
 
 #func _ready():
 #	levels = get_level_list()
 #	print(levels)
 
 func get_level(_level:int):
-	return levels[_level-1]
+	return levels[_level-1] if _level-1 <= levels.size()-1 else menu
 
 #func get_level_list() -> Array:
 #	var regex = RegEx.new()
