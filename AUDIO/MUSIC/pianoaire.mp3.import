@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/pianoaire.mp3-d4276fce5785e1ae74b775cb01c851d9.mp3str"
+
+[deps]
+
+source_file="res://AUDIO/MUSIC/pianoaire.mp3"
+dest_files=[ "res://.import/pianoaire.mp3-d4276fce5785e1ae74b775cb01c851d9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

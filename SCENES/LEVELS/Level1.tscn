@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SCENES/LEVELS/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/ASSETS/tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCENES/ASSETS/rock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SCENES/ASSETS/flower.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SCENES/ASSETS/plant1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://AUDIO/MUSIC/ground lonelyness.mp3" type="AudioStream" id=6]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 35.9569, 1, 1 )
@@ -15,37 +16,45 @@ next_level = 2
 [node name="flower" parent="." index="0" instance=ExtResource( 4 )]
 transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, -7.4727, 0, -23.3829 )
 
-[node name="Ground" parent="." index="4"]
+[node name="ground lonelyness" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource( 6 )
+autoplay = true
+bus = "MUSIC"
+
+[node name="Ground" parent="." index="5"]
 transform = Transform( -0.00160567, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00160567, -7.50803, -1, -45.3829 )
 
-[node name="Eau" parent="." index="8"]
+[node name="DirectionalLight" parent="." index="6"]
+transform = Transform( 1, 0, 0, 0, 0.79559, 0.605836, 0, -0.605836, 0.79559, -0.563449, 23.546, 0 )
+
+[node name="Eau" parent="." index="9"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.248003, 4.37114e-08 )
 
-[node name="tree" parent="." index="9" instance=ExtResource( 2 )]
+[node name="tree" parent="." index="10" instance=ExtResource( 2 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -20, 0, -18 )
 
-[node name="flower2" parent="." index="10" instance=ExtResource( 4 )]
+[node name="flower2" parent="." index="11" instance=ExtResource( 4 )]
 transform = Transform( -1.49583, 0, -2.60049, 0, 3, 0, 2.60049, 0, -1.49583, -24.508, 0, -45.3556 )
 
-[node name="plant1" parent="." index="11" instance=ExtResource( 5 )]
+[node name="plant1" parent="." index="12" instance=ExtResource( 5 )]
 transform = Transform( -0.00481702, 0, 3, 0, 3, 0, -3, 0, -0.00481702, -8.53051, 0, -59.3813 )
 
-[node name="plant2" parent="." index="12" instance=ExtResource( 5 )]
+[node name="plant2" parent="." index="13" instance=ExtResource( 5 )]
 transform = Transform( -0.00417167, 0.00240851, 3, 1.5, 2.59808, 0, -2.59808, 1.5, -0.00481702, 14.4952, -1, -43.4182 )
 
-[node name="plant3" parent="." index="13" instance=ExtResource( 5 )]
+[node name="plant3" parent="." index="14" instance=ExtResource( 5 )]
 transform = Transform( -2.25208, -1.30024, 1.49583, -1.5, 2.59808, 0, -1.29543, -0.747913, -2.60049, 13.4952, 0, -43.4166 )
 
-[node name="plant4" parent="." index="14" instance=ExtResource( 5 )]
+[node name="plant4" parent="." index="15" instance=ExtResource( 5 )]
 transform = Transform( -1.99648, 1.49759, -1.66472, 2.04904, 2.12132, -0.549038, 0.903058, -1.50241, -2.4346, 13.4952, 0, -43.4166 )
 
-[node name="rock" parent="." index="15" instance=ExtResource( 3 )]
+[node name="rock" parent="." index="16" instance=ExtResource( 3 )]
 transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, 10.5305, 0, -21.4118 )
 
-[node name="Player" parent="." index="16"]
+[node name="Player" parent="." index="17"]
 transform = Transform( 0.999974, -0.00719069, 0, 0.0071907, 0.999974, 0, 0, 0, 1, -19.7826, -0.00373006, -15.4577 )
 
-[node name="Victory" type="StaticBody" parent="." index="18" groups=["collision_victoire"]]
+[node name="Victory" type="StaticBody" parent="." index="19" groups=["collision_victoire"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61259, -26.0271 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Victory" index="0"]

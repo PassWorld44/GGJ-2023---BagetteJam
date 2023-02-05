@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ground lonelyness.mp3-4baac2854db2a3a53ed705db97c68006.mp3str"
+
+[deps]
+
+source_file="res://AUDIO/MUSIC/ground lonelyness.mp3"
+dest_files=[ "res://.import/ground lonelyness.mp3-4baac2854db2a3a53ed705db97c68006.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
