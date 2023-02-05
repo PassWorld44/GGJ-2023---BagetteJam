@@ -233,7 +233,8 @@ shadow_enabled = true
 
 [node name="Barriers" type="GridMap" parent="."]
 __meta__ = {
-"_editor_clip_": 0
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, -4, 0 )
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
