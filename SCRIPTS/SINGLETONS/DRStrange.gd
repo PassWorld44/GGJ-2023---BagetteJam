@@ -1,4 +1,4 @@
-extends Node
+extends CanvasLayer
 
 signal loaded()
 signal saved()
@@ -15,6 +15,8 @@ const default_save = "user://sauvegarde.data"
 var password = "osef1234"
 
 func _ready():
+	Pause.connect("paused",$FocusCursor,"hide")
+	Pause.connect("unpaused",$FocusCursor,"show")
 	load_values()
 	
 
@@ -65,7 +67,6 @@ func set_bus_volume(bus:int,volume:int):
 #	print(bus_volumes)
 
 func get_bus_volume(bus:int):
-	
 	return bus_volumes[bus]
 
 # SAUVEGARDER ET QUITTER ----------------------|

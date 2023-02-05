@@ -11,6 +11,8 @@ script/source = "extends CanvasLayer
 signal hidden()
 
 var current_tween : SceneTreeTween = null
+var previous_focus_owner = null
+
 
 onready var panel = $Center
 onready var background = $Back
@@ -26,15 +28,15 @@ func show():
 	twn.parallel().tween_property(panel,\"rect_scale\",Vector2.ONE,0.5)
 	
 	current_tween = twn
+	
+	previous_focus_owner = panel.get_focus_owner()
 	$Center/Panel/Margin/AV/Audio.grab_focus()
 	
 
 func hide():
-	var twn = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	twn.tween_property(panel,\"modulate:a\",0.0,0.25)
-	twn.parallel().tween_property(background,\"modulate:a\",0.0,0.25)
-	twn.connect(\"finished\",self,\"set_visible\",[false])
-	
+	visible = false
+	yield(get_tree(),\"idle_frame\")
+	emit_signal(\"hidden\")
 "
 
 [sub_resource type="Shader" id=45]
@@ -372,6 +374,7 @@ font_data = ExtResource( 3 )
 
 [node name="SETTINGS" type="CanvasLayer"]
 pause_mode = 2
+layer = 5
 visible = false
 script = SubResource( 44 )
 
@@ -416,36 +419,17 @@ margin_right = 169.0
 margin_bottom = 68.0
 focus_neighbour_left = NodePath("../BACK")
 focus_neighbour_top = NodePath("../BACK")
-focus_neighbour_right = NodePath("../Video")
-focus_neighbour_bottom = NodePath("../Video")
-focus_next = NodePath("../Video")
 focus_previous = NodePath("../BACK")
 theme_type_variation = "LargeButton"
 text = "Audio"
-
-[node name="Video" type="Button" parent="Center/Panel/Margin/AV"]
-margin_top = 76.0
-margin_right = 169.0
-margin_bottom = 144.0
-focus_neighbour_left = NodePath("../Audio")
-focus_neighbour_top = NodePath("../Audio")
-focus_neighbour_right = NodePath("../BACK")
-focus_neighbour_bottom = NodePath("../BACK")
-focus_next = NodePath("../BACK")
-focus_previous = NodePath("../Audio")
-theme_type_variation = "LargeButton"
-text = "Video"
 
 [node name="BACK" type="Button" parent="Center/Panel/Margin/AV"]
 margin_top = 152.0
 margin_right = 169.0
 margin_bottom = 216.0
-focus_neighbour_left = NodePath("../Video")
-focus_neighbour_top = NodePath("../Video")
 focus_neighbour_right = NodePath("../Audio")
 focus_neighbour_bottom = NodePath("../Audio")
 focus_next = NodePath("../Audio")
-focus_previous = NodePath("../Video")
 custom_fonts/font = SubResource( 48 )
 custom_styles/hover = SubResource( 47 )
 custom_styles/pressed = SubResource( 47 )
@@ -527,6 +511,7 @@ focus_next = NodePath("../../SFX/SFXSlider")
 focus_previous = NodePath("../../MASTER/MasterSlider")
 script = ExtResource( 2 )
 bus = 1
+base_volume = -2.0
 label_node = NodePath("Volume")
 prefix = ""
 
@@ -566,6 +551,7 @@ focus_previous = NodePath("../../MUSIC/MusicSlider")
 theme_type_variation = "HSliderBlue"
 script = ExtResource( 2 )
 bus = 2
+base_volume = -12.5
 label_node = NodePath("Volume")
 prefix = ""
 
@@ -605,6 +591,7 @@ focus_previous = NodePath("../../SFX/SFXSlider")
 theme_type_variation = "HSliderPurple"
 script = ExtResource( 2 )
 bus = 3
+base_volume = -12.5
 label_node = NodePath("Volume")
 prefix = ""
 
@@ -629,6 +616,8 @@ custom_styles/disabled = SubResource( 50 )
 custom_styles/normal = SubResource( 47 )
 text = "BACK"
 
+[connection signal="hidden" from="." to="Center/Panel/Margin/AV" method="show"]
+[connection signal="hidden" from="." to="Center/Panel/Margin/AUDIO" method="hide"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AV" method="hide"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AUDIO" method="show"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AUDIO/MASTER/MasterSlider" method="grab_focus"]
