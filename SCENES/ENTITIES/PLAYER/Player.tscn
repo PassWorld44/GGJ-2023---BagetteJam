@@ -18,7 +18,7 @@ scale = 0.5
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.389, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45379, 0 )
 
 [node name="RootsSpawn" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.754, -4 )
@@ -36,7 +36,7 @@ draw_pass_1 = ExtResource( 2 )
 
 [node name="RayCast" type="RayCast" parent="RootsSpawn/Col/Particles"]
 enabled = true
-cast_to = Vector3( 0, 0, -8 )
+cast_to = Vector3( 0, 0, -1 )
 
 [node name="Listener" type="Listener" parent="RootsSpawn/Col/Particles"]
 current = true

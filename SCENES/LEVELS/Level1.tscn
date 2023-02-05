@@ -15,7 +15,7 @@ transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, -7.47
 transform = Transform( -0.00160567, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00160567, -7.50803, -1, -45.3829 )
 
 [node name="Eau" parent="." index="8"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.726776, 4.37114e-08 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.248003, 4.37114e-08 )
 
 [node name="tree" parent="." index="9" instance=ExtResource( 2 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -20, 0, -18 )

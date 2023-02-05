@@ -7,9 +7,6 @@
 
 [node name="LevelTemplate" instance=ExtResource( 1 )]
 
-[node name="StaticBody" parent="." index="7"]
-visible = false
-
 [node name="tree" parent="." index="8" instance=ExtResource( 2 )]
 transform = Transform( 3.95436, -0.602559, 0, 0.602559, 3.95436, 0, 0, 0, 4, -16, 0, -15 )
 
