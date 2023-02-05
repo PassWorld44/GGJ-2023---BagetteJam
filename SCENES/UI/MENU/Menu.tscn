@@ -21,15 +21,11 @@
 [sub_resource type="GDScript" id=33]
 script/source = "extends Node
 
-func _ready():
-	Pause.connect(\"unpaused\",self,\"grab_focus\")
+
 
 func play():
 	Transition.change_scene_to(LevelManager.get_level(1))
 
-func grab_focus():
-	yield(get_tree(),\"idle_frame\")
-	$Margin/VBox/Play.grab_focus()
 "
 
 [sub_resource type="Gradient" id=14]
