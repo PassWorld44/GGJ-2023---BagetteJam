@@ -41,7 +41,8 @@ cast_to = Vector3( 0, 0, -1 )
 [node name="Listener" type="Listener" parent="RootsSpawn/Col/Particles"]
 current = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="RootsSpawn/Col/Particles"]
+[node name="Grass" type="AudioStreamPlayer" parent="RootsSpawn/Col/Particles"]
 stream = ExtResource( 3 )
-volume_db = -10.0
+volume_db = -5.0
 autoplay = true
+bus = "SFX"

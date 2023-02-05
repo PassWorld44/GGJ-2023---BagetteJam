@@ -16,12 +16,18 @@ onready var panel = $Center
 onready var background = $Back
 
 func show():
+	panel.rect_scale = Vector2.ZERO
+	panel.modulate.a = 1.0
 	visible = true
 	var twn = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	
+	
 	twn.tween_property(background,\"modulate:a\",1.0,0.5)
 	twn.parallel().tween_property(panel,\"rect_scale\",Vector2.ONE,0.5)
+	
 	current_tween = twn
 	$Center/Panel/Margin/AV/Audio.grab_focus()
+	
 
 func hide():
 	var twn = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
@@ -626,7 +632,6 @@ text = "BACK"
 [connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AUDIO" method="show"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AUDIO/MASTER/MasterSlider" method="grab_focus"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="." method="hide"]
-[connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="Center/Panel/Margin/AV" method="show"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="Center/Panel/Margin/AV/Audio" method="grab_focus"]
 [connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="Center/Panel/Margin/AUDIO" method="hide"]
 [connection signal="pressed" from="Center/Panel/Margin/AUDIO/BACK" to="Center/Panel/Margin/AV" method="show"]
