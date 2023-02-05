@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SCENES/LEVELS/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/ASSETS/tree.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCENES/ASSETS/rock.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SCENES/ASSETS/flower.tscn" type="PackedScene" id=4]
 [ext_resource path="res://SCENES/ASSETS/plant1.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 35.9569, 1, 1 )
 
 [node name="LevelTemplate2" instance=ExtResource( 1 )]
 next_level = 3
@@ -215,3 +218,10 @@ transform = Transform( 1.74288, 1.29411, -2.07068, 0, 2.54403, 1.58994, 2.4418, 
 
 [node name="Player" parent="." index="73"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.992, 0.030677, -14.807 )
+
+[node name="Victory" type="StaticBody" parent="." index="75" groups=["collision_victoire"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.61259, -26.0271 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Victory" index="0"]
+transform = Transform( 0.999495, 0, 0.0317771, 0, 1, 0, -0.0317771, 0, 0.999495, -6.38916, -4.76529, -49.6672 )
+shape = SubResource( 1 )
