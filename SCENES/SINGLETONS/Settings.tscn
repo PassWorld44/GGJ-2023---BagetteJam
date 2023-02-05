@@ -1,0 +1,634 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://SPRITES/UI/SHAPES/waterblock.svg" type="Texture" id=1]
+[ext_resource path="res://SCRIPTS/MISC/Volume.gd" type="Script" id=2]
+[ext_resource path="res://RES/theme/fonts/josefinSans.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://RES/SHADERS/Wobbly.tres" type="Shader" id=4]
+
+[sub_resource type="GDScript" id=44]
+script/source = "extends CanvasLayer
+
+signal hidden()
+
+var current_tween : SceneTreeTween = null
+
+onready var panel = $Center
+onready var background = $Back
+
+func show():
+	visible = true
+	var twn = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	twn.tween_property(background,\"modulate:a\",1.0,0.5)
+	twn.parallel().tween_property(panel,\"rect_scale\",Vector2.ONE,0.5)
+	current_tween = twn
+	$Center/Panel/Margin/AV/Audio.grab_focus()
+
+func hide():
+	var twn = create_tween().set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	twn.tween_property(panel,\"modulate:a\",0.0,0.25)
+	twn.parallel().tween_property(background,\"modulate:a\",0.0,0.25)
+	twn.connect(\"finished\",self,\"set_visible\",[false])
+	emit_signal(\"hidden\")
+"
+
+[sub_resource type="Shader" id=45]
+code = "shader_type canvas_item;
+
+
+
+uniform vec4 WATER_COL : hint_color =  vec4(0.04, 0.38, 0.88, 1.0);
+
+uniform vec4 WATER2_COL : hint_color =  vec4(0.04, 0.35, 0.78, 1.0);
+
+uniform vec4 FOAM_COL : hint_color = vec4(0.8125, 0.9609, 0.9648, 1.0);
+
+
+
+uniform float distortion_speed = 2.0;
+
+uniform vec2 tile = vec2(5.0, 5.0);
+
+
+const float TWOPI = 6.283185307;
+
+const float SIXPI = 18.84955592;
+
+
+
+
+
+
+
+float circ(vec2 pos, vec2 c, float s)
+
+{
+
+    c = abs(pos - c);
+
+    c = min(c, 1.0 - c);
+
+
+
+    return smoothstep(0.0, 0.002, sqrt(s) - sqrt(dot(c, c))) * -1.0;
+
+}
+
+
+
+
+
+float waterlayer(vec2 uv)
+
+{
+
+    uv = mod(uv, 1.0); // Clamp to [0..1]
+
+    float ret = 1.0;
+
+    ret += circ(uv, vec2(0.37378, 0.277169), 0.0268181);
+
+    ret += circ(uv, vec2(0.0317477, 0.540372), 0.0193742);
+
+    ret += circ(uv, vec2(0.430044, 0.882218), 0.0232337);
+
+    ret += circ(uv, vec2(0.641033, 0.695106), 0.0117864);
+
+    ret += circ(uv, vec2(0.0146398, 0.0791346), 0.0299458);
+
+    ret += circ(uv, vec2(0.43871, 0.394445), 0.0289087);
+
+    ret += circ(uv, vec2(0.909446, 0.878141), 0.028466);
+
+    ret += circ(uv, vec2(0.310149, 0.686637), 0.0128496);
+
+    ret += circ(uv, vec2(0.928617, 0.195986), 0.0152041);
+
+    ret += circ(uv, vec2(0.0438506, 0.868153), 0.0268601);
+
+    ret += circ(uv, vec2(0.308619, 0.194937), 0.00806102);
+
+    ret += circ(uv, vec2(0.349922, 0.449714), 0.00928667);
+
+    ret += circ(uv, vec2(0.0449556, 0.953415), 0.023126);
+
+    ret += circ(uv, vec2(0.117761, 0.503309), 0.0151272);
+
+    ret += circ(uv, vec2(0.563517, 0.244991), 0.0292322);
+
+    ret += circ(uv, vec2(0.566936, 0.954457), 0.00981141);
+
+    ret += circ(uv, vec2(0.0489944, 0.200931), 0.0178746);
+
+    ret += circ(uv, vec2(0.569297, 0.624893), 0.0132408);
+
+    ret += circ(uv, vec2(0.298347, 0.710972), 0.0114426);
+
+    ret += circ(uv, vec2(0.878141, 0.771279), 0.00322719);
+
+    ret += circ(uv, vec2(0.150995, 0.376221), 0.00216157);
+
+    ret += circ(uv, vec2(0.119673, 0.541984), 0.0124621);
+
+    ret += circ(uv, vec2(0.629598, 0.295629), 0.0198736);
+
+    ret += circ(uv, vec2(0.334357, 0.266278), 0.0187145);
+
+    ret += circ(uv, vec2(0.918044, 0.968163), 0.0182928);
+
+    ret += circ(uv, vec2(0.965445, 0.505026), 0.006348);
+
+    ret += circ(uv, vec2(0.514847, 0.865444), 0.00623523);
+
+    ret += circ(uv, vec2(0.710575, 0.0415131), 0.00322689);
+
+    ret += circ(uv, vec2(0.71403, 0.576945), 0.0215641);
+
+    ret += circ(uv, vec2(0.748873, 0.413325), 0.0110795);
+
+    ret += circ(uv, vec2(0.0623365, 0.896713), 0.0236203);
+
+    ret += circ(uv, vec2(0.980482, 0.473849), 0.00573439);
+
+    ret += circ(uv, vec2(0.647463, 0.654349), 0.0188713);
+
+    ret += circ(uv, vec2(0.651406, 0.981297), 0.00710875);
+
+    ret += circ(uv, vec2(0.428928, 0.382426), 0.0298806);
+
+    ret += circ(uv, vec2(0.811545, 0.62568), 0.00265539);
+
+    ret += circ(uv, vec2(0.400787, 0.74162), 0.00486609);
+
+    ret += circ(uv, vec2(0.331283, 0.418536), 0.00598028);
+
+    ret += circ(uv, vec2(0.894762, 0.0657997), 0.00760375);
+
+    ret += circ(uv, vec2(0.525104, 0.572233), 0.0141796);
+
+    ret += circ(uv, vec2(0.431526, 0.911372), 0.0213234);
+
+    ret += circ(uv, vec2(0.658212, 0.910553), 0.000741023);
+
+    ret += circ(uv, vec2(0.514523, 0.243263), 0.0270685);
+
+    ret += circ(uv, vec2(0.0249494, 0.252872), 0.00876653);
+
+    ret += circ(uv, vec2(0.502214, 0.47269), 0.0234534);
+
+    ret += circ(uv, vec2(0.693271, 0.431469), 0.0246533);
+
+    ret += circ(uv, vec2(0.415, 0.884418), 0.0271696);
+
+    ret += circ(uv, vec2(0.149073, 0.41204), 0.00497198);
+
+    ret += circ(uv, vec2(0.533816, 0.897634), 0.00650833);
+
+    ret += circ(uv, vec2(0.0409132, 0.83406), 0.0191398);
+
+    ret += circ(uv, vec2(0.638585, 0.646019), 0.0206129);
+
+    ret += circ(uv, vec2(0.660342, 0.966541), 0.0053511);
+
+    ret += circ(uv, vec2(0.513783, 0.142233), 0.00471653);
+
+    ret += circ(uv, vec2(0.124305, 0.644263), 0.00116724);
+
+    ret += circ(uv, vec2(0.99871, 0.583864), 0.0107329);
+
+    ret += circ(uv, vec2(0.894879, 0.233289), 0.00667092);
+
+    ret += circ(uv, vec2(0.246286, 0.682766), 0.00411623);
+
+    ret += circ(uv, vec2(0.0761895, 0.16327), 0.0145935);
+
+    ret += circ(uv, vec2(0.949386, 0.802936), 0.0100873);
+
+    ret += circ(uv, vec2(0.480122, 0.196554), 0.0110185);
+
+    ret += circ(uv, vec2(0.896854, 0.803707), 0.013969);
+
+    ret += circ(uv, vec2(0.292865, 0.762973), 0.00566413);
+
+    ret += circ(uv, vec2(0.0995585, 0.117457), 0.00869407);
+
+    ret += circ(uv, vec2(0.377713, 0.00335442), 0.0063147);
+
+    ret += circ(uv, vec2(0.506365, 0.531118), 0.0144016);
+
+    ret += circ(uv, vec2(0.408806, 0.894771), 0.0243923);
+
+    ret += circ(uv, vec2(0.143579, 0.85138), 0.00418529);
+
+    ret += circ(uv, vec2(0.0902811, 0.181775), 0.0108896);
+
+    ret += circ(uv, vec2(0.780695, 0.394644), 0.00475475);
+
+    ret += circ(uv, vec2(0.298036, 0.625531), 0.00325285);
+
+    ret += circ(uv, vec2(0.218423, 0.714537), 0.00157212);
+
+    ret += circ(uv, vec2(0.658836, 0.159556), 0.00225897);
+
+    ret += circ(uv, vec2(0.987324, 0.146545), 0.0288391);
+
+    ret += circ(uv, vec2(0.222646, 0.251694), 0.00092276);
+
+    ret += circ(uv, vec2(0.159826, 0.528063), 0.00605293);
+
+	return max(ret, 0.0);
+
+}
+
+
+
+vec3 water(vec2 uv, vec3 cdir, float iTime)
+
+{
+
+    uv *= vec2(0.25);
+
+
+
+    // Parallax height distortion with two directional waves at
+
+    // slightly different angles.
+
+    vec2 a = 0.025 * cdir.xz / cdir.y; // Parallax offset
+
+    float h = sin(uv.x + iTime); // Height at UV
+
+    uv += a * h;
+
+    h = sin(0.841471 * uv.x - 0.540302 * uv.y + iTime);
+
+    uv += a * h;
+
+    
+
+    // Texture distortion
+
+    float d1 = mod(uv.x + uv.y, TWOPI);
+
+    float d2 = mod((uv.x + uv.y + 0.25) * 1.3, SIXPI);
+
+    d1 = iTime * 0.07 + d1;
+
+    d2 = iTime * 0.5 + d2;
+
+    vec2 dist = vec2(
+
+    	sin(d1) * 0.15 + sin(d2) * 0.05,
+
+    	cos(d1) * 0.15 + cos(d2) * 0.05
+
+    );
+
+    
+
+    vec3 ret = mix(WATER_COL.rgb, WATER2_COL.rgb, waterlayer(uv + dist.xy));
+
+    ret = mix(ret, FOAM_COL.rgb, waterlayer(vec2(1.0) - uv - dist.yx));
+
+    return ret;
+
+}
+
+
+
+void fragment() {
+
+	vec2 uv = UV;
+
+   COLOR.rgb = vec3(water(uv * tile, vec3(0,1,0), TIME * distortion_speed));
+
+}"
+
+[sub_resource type="ShaderMaterial" id=46]
+shader = SubResource( 45 )
+shader_param/WATER_COL = Color( 0.392157, 0.615686, 0.905882, 1 )
+shader_param/WATER2_COL = Color( 0.537255, 0.870588, 1, 1 )
+shader_param/FOAM_COL = Color( 0.8125, 0.9609, 0.9648, 1 )
+shader_param/distortion_speed = 2.0
+shader_param/tile = Vector2( 10, 10 )
+
+[sub_resource type="OpenSimplexNoise" id=41]
+period = 128.0
+
+[sub_resource type="NoiseTexture" id=39]
+seamless = true
+noise = SubResource( 41 )
+
+[sub_resource type="ShaderMaterial" id=37]
+shader = ExtResource( 4 )
+shader_param/strength = 0.1
+shader_param/speed = 30.0
+shader_param/frames = 240
+shader_param/flowMap = SubResource( 39 )
+
+[sub_resource type="StyleBoxTexture" id=35]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 144, 144 )
+margin_left = 24.0
+margin_right = 24.0
+margin_top = 24.0
+margin_bottom = 24.0
+expand_margin_left = 24.0
+expand_margin_right = 8.0
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="DynamicFont" id=48]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=47]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 1, 0.160784, 0.160784, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id=49]
+
+[sub_resource type="StyleBoxEmpty" id=50]
+
+[sub_resource type="DynamicFont" id=43]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="SETTINGS" type="CanvasLayer"]
+visible = false
+script = SubResource( 44 )
+
+[node name="Back" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0.101961 )
+material = SubResource( 46 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Center" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 960, 528 )
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+material = SubResource( 37 )
+margin_left = 936.0
+margin_top = 516.0
+margin_right = 984.0
+margin_bottom = 564.0
+custom_styles/panel = SubResource( 35 )
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 225.0
+margin_bottom = 272.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="AV" type="VBoxContainer" parent="Center/Panel/Margin"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 185.0
+margin_bottom = 232.0
+
+[node name="Audio" type="Button" parent="Center/Panel/Margin/AV"]
+margin_right = 169.0
+margin_bottom = 68.0
+focus_neighbour_left = NodePath("../BACK")
+focus_neighbour_top = NodePath("../BACK")
+focus_neighbour_right = NodePath("../Video")
+focus_neighbour_bottom = NodePath("../Video")
+focus_next = NodePath("../Video")
+focus_previous = NodePath("../BACK")
+theme_type_variation = "LargeButton"
+text = "Audio"
+
+[node name="Video" type="Button" parent="Center/Panel/Margin/AV"]
+margin_top = 76.0
+margin_right = 169.0
+margin_bottom = 144.0
+focus_neighbour_left = NodePath("../Audio")
+focus_neighbour_top = NodePath("../Audio")
+focus_neighbour_right = NodePath("../BACK")
+focus_neighbour_bottom = NodePath("../BACK")
+focus_next = NodePath("../BACK")
+focus_previous = NodePath("../Audio")
+theme_type_variation = "LargeButton"
+text = "Video"
+
+[node name="BACK" type="Button" parent="Center/Panel/Margin/AV"]
+margin_top = 152.0
+margin_right = 169.0
+margin_bottom = 216.0
+focus_neighbour_left = NodePath("../Video")
+focus_neighbour_top = NodePath("../Video")
+focus_neighbour_right = NodePath("../Audio")
+focus_neighbour_bottom = NodePath("../Audio")
+focus_next = NodePath("../Audio")
+focus_previous = NodePath("../Video")
+custom_fonts/font = SubResource( 48 )
+custom_styles/hover = SubResource( 47 )
+custom_styles/pressed = SubResource( 47 )
+custom_styles/focus = SubResource( 49 )
+custom_styles/disabled = SubResource( 50 )
+custom_styles/normal = SubResource( 47 )
+text = "BACK"
+
+[node name="AUDIO" type="VBoxContainer" parent="Center/Panel/Margin"]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 298.0
+margin_bottom = 528.0
+rect_min_size = Vector2( 256, 0 )
+custom_constants/separation = 16
+
+[node name="MASTER" type="VBoxContainer" parent="Center/Panel/Margin/AUDIO"]
+margin_right = 282.0
+margin_bottom = 96.0
+custom_constants/separation = 0
+
+[node name="Master" type="Label" parent="Center/Panel/Margin/AUDIO/MASTER"]
+margin_right = 282.0
+margin_bottom = 64.0
+theme_type_variation = "TitleLabel"
+text = "Master"
+align = 1
+valign = 1
+
+[node name="MasterSlider" type="HSlider" parent="Center/Panel/Margin/AUDIO/MASTER"]
+margin_top = 64.0
+margin_right = 282.0
+margin_bottom = 96.0
+focus_neighbour_left = NodePath("../../BACK")
+focus_neighbour_top = NodePath("../../BACK")
+focus_neighbour_right = NodePath("../../MUSIC/MusicSlider")
+focus_neighbour_bottom = NodePath("../../MUSIC/MusicSlider")
+focus_next = NodePath("../../MUSIC/MusicSlider")
+focus_previous = NodePath("../../BACK")
+size_flags_horizontal = 3
+theme_type_variation = "HSliderRed"
+script = ExtResource( 2 )
+label_node = NodePath("Volume")
+prefix = ""
+
+[node name="Volume" type="Label" parent="Center/Panel/Margin/AUDIO/MASTER/MasterSlider"]
+margin_left = -45.0
+margin_top = 4.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 43 )
+text = "32"
+align = 1
+valign = 1
+
+[node name="MUSIC" type="VBoxContainer" parent="Center/Panel/Margin/AUDIO"]
+margin_top = 112.0
+margin_right = 282.0
+margin_bottom = 208.0
+custom_constants/separation = 0
+
+[node name="Music" type="Label" parent="Center/Panel/Margin/AUDIO/MUSIC"]
+margin_right = 282.0
+margin_bottom = 64.0
+theme_type_variation = "TitleLabel"
+text = "Music"
+align = 1
+valign = 1
+
+[node name="MusicSlider" type="HSlider" parent="Center/Panel/Margin/AUDIO/MUSIC"]
+margin_top = 64.0
+margin_right = 282.0
+margin_bottom = 96.0
+focus_neighbour_left = NodePath("../../MASTER/MasterSlider")
+focus_neighbour_top = NodePath("../../MASTER/MasterSlider")
+focus_neighbour_right = NodePath("../../SFX/SFXSlider")
+focus_neighbour_bottom = NodePath("../../SFX/SFXSlider")
+focus_next = NodePath("../../SFX/SFXSlider")
+focus_previous = NodePath("../../MASTER/MasterSlider")
+script = ExtResource( 2 )
+bus = 1
+label_node = NodePath("Volume")
+prefix = ""
+
+[node name="Volume" type="Label" parent="Center/Panel/Margin/AUDIO/MUSIC/MusicSlider"]
+margin_left = -45.0
+margin_top = 4.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 43 )
+text = "32"
+align = 1
+valign = 1
+
+[node name="SFX" type="VBoxContainer" parent="Center/Panel/Margin/AUDIO"]
+margin_top = 224.0
+margin_right = 282.0
+margin_bottom = 320.0
+custom_constants/separation = 0
+
+[node name="SFX" type="Label" parent="Center/Panel/Margin/AUDIO/SFX"]
+margin_right = 282.0
+margin_bottom = 64.0
+theme_type_variation = "TitleLabel"
+text = "SFX"
+align = 1
+valign = 1
+
+[node name="SFXSlider" type="HSlider" parent="Center/Panel/Margin/AUDIO/SFX"]
+margin_top = 64.0
+margin_right = 282.0
+margin_bottom = 96.0
+focus_neighbour_left = NodePath("../../MUSIC/MusicSlider")
+focus_neighbour_top = NodePath("../../MUSIC/MusicSlider")
+focus_neighbour_right = NodePath("../../AMBIANCE/AmbianceSlider")
+focus_neighbour_bottom = NodePath("../../AMBIANCE/AmbianceSlider")
+focus_next = NodePath("../../AMBIANCE/AmbianceSlider")
+focus_previous = NodePath("../../MUSIC/MusicSlider")
+theme_type_variation = "HSliderBlue"
+script = ExtResource( 2 )
+bus = 2
+label_node = NodePath("Volume")
+prefix = ""
+
+[node name="Volume" type="Label" parent="Center/Panel/Margin/AUDIO/SFX/SFXSlider"]
+margin_left = -45.0
+margin_top = 4.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 43 )
+text = "32"
+align = 1
+valign = 1
+
+[node name="AMBIANCE" type="VBoxContainer" parent="Center/Panel/Margin/AUDIO"]
+margin_top = 336.0
+margin_right = 282.0
+margin_bottom = 432.0
+custom_constants/separation = 0
+
+[node name="Ambiance" type="Label" parent="Center/Panel/Margin/AUDIO/AMBIANCE"]
+margin_right = 282.0
+margin_bottom = 64.0
+theme_type_variation = "TitleLabel"
+text = "Ambience"
+align = 1
+valign = 1
+
+[node name="AmbianceSlider" type="HSlider" parent="Center/Panel/Margin/AUDIO/AMBIANCE"]
+margin_top = 64.0
+margin_right = 282.0
+margin_bottom = 96.0
+focus_neighbour_left = NodePath("../../SFX/SFXSlider")
+focus_neighbour_top = NodePath("../../SFX/SFXSlider")
+focus_neighbour_right = NodePath("../../BACK")
+focus_neighbour_bottom = NodePath("../../BACK")
+focus_next = NodePath("../../BACK")
+focus_previous = NodePath("../../SFX/SFXSlider")
+theme_type_variation = "HSliderPurple"
+script = ExtResource( 2 )
+bus = 3
+label_node = NodePath("Volume")
+prefix = ""
+
+[node name="Volume" type="Label" parent="Center/Panel/Margin/AUDIO/AMBIANCE/AmbianceSlider"]
+margin_left = -45.0
+margin_top = 4.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 43 )
+text = "32"
+align = 1
+valign = 1
+
+[node name="BACK" type="Button" parent="Center/Panel/Margin/AUDIO"]
+margin_top = 448.0
+margin_right = 282.0
+margin_bottom = 512.0
+custom_fonts/font = SubResource( 48 )
+custom_styles/hover = SubResource( 47 )
+custom_styles/pressed = SubResource( 47 )
+custom_styles/focus = SubResource( 49 )
+custom_styles/disabled = SubResource( 50 )
+custom_styles/normal = SubResource( 47 )
+text = "BACK"
+
+[connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AV" method="hide"]
+[connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AUDIO" method="show"]
+[connection signal="pressed" from="Center/Panel/Margin/AV/Audio" to="Center/Panel/Margin/AUDIO/MASTER/MasterSlider" method="grab_focus"]
+[connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="." method="hide"]
+[connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="Center/Panel/Margin/AV" method="show"]
+[connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="Center/Panel/Margin/AV/Audio" method="grab_focus"]
+[connection signal="pressed" from="Center/Panel/Margin/AV/BACK" to="Center/Panel/Margin/AUDIO" method="hide"]
+[connection signal="pressed" from="Center/Panel/Margin/AUDIO/BACK" to="Center/Panel/Margin/AV" method="show"]
+[connection signal="pressed" from="Center/Panel/Margin/AUDIO/BACK" to="Center/Panel/Margin/AV/Audio" method="grab_focus"]
+[connection signal="pressed" from="Center/Panel/Margin/AUDIO/BACK" to="Center/Panel/Margin/AUDIO" method="hide"]

@@ -19,7 +19,7 @@ surfaces/0 = {
 "vertex_count": 485
 }
 
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=33]
 resource_name = "flower_Mesh sphere Instance2"
 surfaces/0 = {
 "aabb": AABB( -0.5, 0, -0.5, 1, 1, 1 ),
@@ -483,7 +483,7 @@ mesh = SubResource( 1 )
 [node name="sphere2" type="MeshInstance" parent="."]
 transform = Transform( 0.790996, 5.88596e-08, -0.042394, 0.149869, 0.0707107, 0.111876, 0.14987, -0.0707106, 0.111876, -0.3731, 1.0119, 0.0182 )
 use_in_baked_light = true
-mesh = SubResource( 2 )
+mesh = SubResource( 33 )
 
 [node name="sphere3" type="MeshInstance" parent="."]
 transform = Transform( 0.724777, -1.11759e-07, -0.0837, 0.295889, 0.0707107, 0.102511, 0.295888, -0.0707107, 0.102511, -0.3522, 0.9565, -0.0372 )

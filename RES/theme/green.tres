@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=73 format=2]
+[gd_resource type="Theme" load_steps=77 format=2]
 
 [ext_resource path="res://RES/theme/icons/toggle_on_disabled.svg" type="Texture" id=1]
 [ext_resource path="res://RES/theme/icons/submenu.svg" type="Texture" id=2]
@@ -142,6 +142,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id=82]
+bg_color = Color( 0.447059, 0.898039, 1, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=84]
+bg_color = Color( 1, 0.596078, 0.862745, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=83]
+bg_color = Color( 0.858824, 0.666667, 0.498039, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id=49]
 content_margin_left = 8.0
 content_margin_right = 8.0
@@ -168,6 +189,12 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id=80]
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id=81]
+bg_color = Color( 0.219608, 0.756863, 0.537255, 1 )
+draw_center = false
+border_width_bottom = 4
 
 [sub_resource type="StyleBoxFlat" id=42]
 content_margin_left = 8.0
@@ -411,6 +438,12 @@ HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 52 )
 HSlider/styles/grabber_area_highlight = SubResource( 53 )
 HSlider/styles/slider = SubResource( 51 )
+HSliderBlue/base_type = "HSlider"
+HSliderBlue/styles/grabber_area = SubResource( 82 )
+HSliderPurple/base_type = "HSlider"
+HSliderPurple/styles/grabber_area = SubResource( 84 )
+HSliderRed/base_type = "HSlider"
+HSliderRed/styles/grabber_area = SubResource( 83 )
 ItemList/colors/font_color = Color( 1, 1, 1, 1 )
 ItemList/colors/font_color_selected = Color( 0, 0, 0, 1 )
 ItemList/colors/guide_color = Color( 0.129412, 0.372549, 0.501961, 1 )
@@ -427,7 +460,7 @@ LargeButton/styles/disabled = SubResource( 80 )
 LargeButton/styles/focus = SubResource( 80 )
 LargeButton/styles/hover = SubResource( 80 )
 LargeButton/styles/normal = SubResource( 80 )
-LargeButton/styles/pressed = SubResource( 80 )
+LargeButton/styles/pressed = SubResource( 81 )
 LineEdit/colors/clear_button_color = Color( 0.88, 0.88, 0.88, 1 )
 LineEdit/colors/clear_button_color_pressed = Color( 1, 1, 1, 1 )
 LineEdit/colors/cursor_color = Color( 0.611765, 0.858824, 0.498039, 1 )
@@ -512,6 +545,8 @@ TextEdit/icons/tab = null
 TextEdit/styles/focus = SubResource( 42 )
 TextEdit/styles/normal = SubResource( 37 )
 TextEdit/styles/read_only = SubResource( 43 )
+TitleLabel/base_type = "Label"
+TitleLabel/fonts/font = ExtResource( 32 )
 TooltipLabel/colors/font_color = Color( 1, 1, 1, 1 )
 TooltipPanel/styles/panel = SubResource( 36 )
 Tree/colors/font_color = Color( 1, 1, 1, 1 )

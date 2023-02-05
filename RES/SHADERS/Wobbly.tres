@@ -4,21 +4,9 @@
 code = "shader_type canvas_item;
 
 uniform sampler2D flowMap; //Displacement map
-uniform float strength: hint_range(0, 10);    //Force of the effect
-uniform float speed: hint_range(0, 999);      //Speed of the effect
-uniform int frames : hint_range(1, 999); //Frames of the effect
-
-
-// Wind settings.
-uniform float wind_speed = 1.0;
-uniform float minStrength : hint_range(0.0, 1.0) = 0.05;
-uniform float maxStrength : hint_range(0.0, 1.0) = 0.2;
-uniform float strengthScale = 100.0;
-uniform float interval = 3.5;
-uniform float detail = 2.0;
-uniform float distortion : hint_range(0.0, 1.0) = 0.25;
-uniform float heightOffset : hint_range(0.0, 1.0);
-
+uniform float strength = 0.05;    //Force of the effect
+uniform float speed = 60;       //Speed of the effect
+uniform int frames : hint_range(1, 240); //Frames of the effect
 
 //Returns a value between 0 and 1 depending of the frames -> exemple: frames = 4, frame 1 = 0.25
 float clock(float time){
