@@ -8,7 +8,7 @@
 height = 0.002
 
 [sub_resource type="SpatialMaterial" id=7]
-albedo_color = Color( 0.627451, 0.337255, 0, 1 )
+albedo_color = Color( 0.529412, 0.215686, 0.137255, 1 )
 
 [sub_resource type="ParticlesMaterial" id=5]
 gravity = Vector3( 0, 0, 0 )
