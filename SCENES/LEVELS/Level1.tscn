@@ -11,14 +11,11 @@
 [node name="flower" parent="." index="0" instance=ExtResource( 4 )]
 transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, -7.4727, 0, -23.3829 )
 
-[node name="Ground" parent="." index="2"]
+[node name="Ground" parent="." index="4"]
 transform = Transform( -0.00160567, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00160567, -7.50803, -1, -45.3829 )
 
-[node name="Player" parent="." index="7"]
-transform = Transform( 0.999974, -0.00719069, 0, 0.0071907, 0.999974, 0, 0, 0, 1, -19.7826, -0.00373006, -15.4577 )
-
-[node name="StaticBody" parent="." index="8"]
-transform = Transform( -0.00160567, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00160567, -7.50803, 0, -45.3829 )
+[node name="Eau" parent="." index="8"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.726776, 4.37114e-08 )
 
 [node name="tree" parent="." index="9" instance=ExtResource( 2 )]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -20, 0, -18 )
@@ -40,3 +37,6 @@ transform = Transform( -1.99648, 1.49759, -1.66472, 2.04904, 2.12132, -0.549038,
 
 [node name="rock" parent="." index="15" instance=ExtResource( 3 )]
 transform = Transform( 2.59567, 0, 1.50417, 0, 3, 0, -1.50417, 0, 2.59567, 10.5305, 0, -21.4118 )
+
+[node name="Player" parent="." index="16"]
+transform = Transform( 0.999974, -0.00719069, 0, 0.0071907, 0.999974, 0, 0, 0, 1, -19.7826, -0.00373006, -15.4577 )
