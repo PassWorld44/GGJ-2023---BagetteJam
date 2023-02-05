@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WaveSoft.mp3-e6cfb59d9b9df8f1b42bc7a0106d2094.mp3str"
+
+[deps]
+
+source_file="res://AUDIO/AMBIANCE/WaveSoft.mp3"
+dest_files=[ "res://.import/WaveSoft.mp3-e6cfb59d9b9df8f1b42bc7a0106d2094.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

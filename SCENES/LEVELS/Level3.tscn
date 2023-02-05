@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SCENES/LEVELS/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/ASSETS/tree.tscn" type="PackedScene" id=2]
@@ -23,7 +23,11 @@ bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 1, 36.9933 )
+
 [node name="LevelTemplate" instance=ExtResource( 1 )]
+next_level = 4
 
 [node name="green landscape" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource( 11 )
@@ -99,10 +103,13 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.3, 
 [node name="Spatial13" parent="Barriers/Spatial" index="19" instance=ExtResource( 12 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.3, 0, -76.7 )
 
-[node name="tree" parent="." index="9" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="9"]
+transform = Transform( 0.258819, 3.8567e-09, -0.965926, -1.49012e-08, 1, 0, 0.965926, 1.43934e-08, 0.258819, -18, 0, -15 )
+
+[node name="tree" parent="." index="10" instance=ExtResource( 2 )]
 transform = Transform( 3.95436, -0.602559, 0, 0.602559, 3.95436, 0, 0, 0, 4, -16, 0, -15 )
 
-[node name="Spatial" type="Spatial" parent="." index="10"]
+[node name="Spatial" type="Spatial" parent="." index="11"]
 
 [node name="Spatial" parent="Spatial" index="0" instance=ExtResource( 3 )]
 transform = Transform( 19.7391, -0.00977877, -3.22, 0, 19.9999, -0.0607374, 3.22002, 0.059945, 19.739, -14.4268, -0.534782, 0 )
@@ -247,3 +254,9 @@ transform = Transform( 2.56973, -1.0732, -1.11566, 1.15612, 2.76828, 0, 1.02949,
 
 [node name="GIProbe" parent="." index="12"]
 data = SubResource( 1 )
+
+[node name="Victory" type="StaticBody" parent="." index="13" groups=["collision_victoire"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Victory" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4967, 0, 0 )
+shape = SubResource( 2 )

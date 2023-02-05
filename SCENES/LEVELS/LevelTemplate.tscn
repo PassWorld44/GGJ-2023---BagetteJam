@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://SCENES/LEVELS/COMPONENTS/Grass.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/ENTITIES/PLAYER/Player.tscn" type="PackedScene" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://SCRIPTS/MISC/LevelTemplate.gd" type="Script" id=4]
 [ext_resource path="res://AUDIO/AMBIANCE/WindSoft.ogg" type="AudioStream" id=5]
 [ext_resource path="res://AUDIO/AMBIANCE/WaveSoft.ogg" type="AudioStream" id=6]
-
+[ext_resource path="res://RES/theme/fonts/Title.tres" type="DynamicFont" id=7]
 
 [sub_resource type="GDScript" id=15]
 script/source = "extends AudioStreamPlayer
@@ -198,13 +198,25 @@ bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
+[sub_resource type="GDScript" id=26]
+script/source = "extends ColorRect
+
+
+
+
+func _input(event):
+	if event is InputEventKey:
+		if event.scancode == KEY_SPACE:
+			queue_free()
+"
+
 [node name="LevelTemplate" type="Spatial"]
 script = ExtResource( 4 )
 
 [node name="Wind" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -50.455
 autoplay = true
-bus = "AMBIENCE"
 
 [node name="Water" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -251,3 +263,25 @@ mesh = SubResource( 16 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0 )
 extents = Vector3( 128, 15, 128 )
 data = SubResource( 25 )
+
+[node name="Control" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.25 )
+script = SubResource( 26 )
+
+[node name="Center" type="CenterContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Control/Center"]
+margin_left = 663.0
+margin_top = 508.0
+margin_right = 1256.0
+margin_bottom = 572.0
+
+[node name="Label" type="Label" parent="Control/Center/VBox"]
+margin_right = 593.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 7 )
+text = "Press Space to move"
